@@ -404,36 +404,11 @@
   
   
   <entry>
-    <title>DHCP服务</title>
-    <link href="/2020/07/19/Linux/DHCP/"/>
-    <url>/2020/07/19/Linux/DHCP/</url>
+    <title>MySQL入门第二篇</title>
+    <link href="/2020/07/19/MySQL(2)/"/>
+    <url>/2020/07/19/MySQL(2)/</url>
     
-    <content type="html"><![CDATA[<h1 id="Linux的网络服务之一"><a href="#Linux的网络服务之一" class="headerlink" title="Linux的网络服务之一"></a>Linux的网络服务之一</h1><span id="more"></span><h2 id="dhcp服务"><a href="#dhcp服务" class="headerlink" title="dhcp服务"></a>dhcp服务</h2><p>rpm -q dhcp</p><blockquote><p>&#x2F;&#x2F;检查是否安装dhcp服务  </p></blockquote><p>yum install -y dhcp</p><blockquote><p>&#x2F;&#x2F;安装dhcp服务 </p></blockquote><p>service dhcpd start</p><blockquote><p>&#x2F;&#x2F;开启dhcp服务</p></blockquote><p>service dhcp restart</p><blockquote><p>&#x2F;&#x2F;重启dhcp服务 </p></blockquote><h2 id="注意"><a href="#注意" class="headerlink" title="注意:"></a><font color=“#FF00000”>注意:</font></h2><blockquote><p>在虚拟机上的编辑菜单中的虚拟网络编辑器中取消dhcp服务,由于取消了虚拟机网卡的dhcp服务，我们要给网卡手动配置一个ip，linux上的dhcp服务分配的ip必须和你网卡的ip一样。 </p></blockquote><p>vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</p><blockquote><p>&#x2F;&#x2F;进入网卡的配置文件(ens33不是固定的) </p></blockquote><h2 id="更改网卡配置文件"><a href="#更改网卡配置文件" class="headerlink" title="更改网卡配置文件:"></a>更改网卡配置文件:</h2><p>bootproto&#x3D;static</p><blockquote><p>&#x2F;&#x2F;变成静态  </p></blockquote><p>ONBOOT&#x3D;yes<br>IPADDR&#x3D;</p><blockquote><p>&#x2F;&#x2F;ip地址  </p></blockquote><p>NETMASK&#x3D;</p><blockquote><p>&#x2F;&#x2F;子网掩码</p></blockquote><p>GATEWAY&#x3D;</p><blockquote><p>&#x2F;&#x2F;网关 ,网络上默认网关:8.8.8.8  </p></blockquote><p>DNS1&#x3D;</p><blockquote><p>&#x2F;&#x2F;DNS服务  </p></blockquote><h2 id="配置完要重启网络服务"><a href="#配置完要重启网络服务" class="headerlink" title="配置完要重启网络服务"></a>配置完要重启网络服务</h2><p>service network restart</p><blockquote><p>&#x2F;&#x2F;重启网卡 </p></blockquote><h2 id="配置dhcp的配置文件"><a href="#配置dhcp的配置文件" class="headerlink" title="配置dhcp的配置文件:"></a>配置dhcp的配置文件:</h2><p>vi &#x2F;etc&#x2F;dhcp&#x2F;dhcpd.conf</p><blockquote><p>&#x2F;&#x2F;dhcp的配置文件</p></blockquote><p>subnet 192.168.100.0 netmask 255.255.255.0{</p><blockquote><p>&#x2F;&#x2F;定义网络地址和子网掩码</p></blockquote><p>range 192.168.100.200 192.168.100.251;</p><blockquote><p>&#x2F;&#x2F;分配ip地址的范围(写完加分号) </p></blockquote><p>option routers 192.168.100.2;</p><blockquote><p>&#x2F;&#x2F;配置网关  </p></blockquote><p>option domain-name-servers 8.8.8.8;</p><blockquote><p>&#x2F;&#x2F;配置DNS  </p></blockquote><p>default-lease-time 600;</p><blockquote><p>&#x2F;&#x2F;配置租约时间(默认,单位为秒)  </p></blockquote><p>max-lease-time 7200;</p><blockquote><p>&#x2F;&#x2F;配置租约时间(最大,单位为秒)  </p></blockquote><p>host xxx{ </p><blockquote><p>&#x2F;&#x2F;指定机器使用ip(xxx代表主机机器名，自行取名，选配)  </p></blockquote><p>hardware ethernet xx:xx:xx:xx:xx:xx:; </p><blockquote><p>&#x2F;&#x2F;指定机器的物理地址(xxx代表指定机器的物理地址)  </p></blockquote><p>fixed-address xxxxxx;</p><blockquote><p>&#x2F;&#x2F;指定机器的ip地址(xxx代表你要给的ip地址)  </p></blockquote><p>}<br>}<br>service dhcp restar</p><blockquote><p>&#x2F;&#x2F;重启dhcp服务  </p></blockquote><h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意:"></a><font color=“#FF00000”>注意:</font></h2><blockquote><p>1.在dhcp配置文件中，记得要在第一段和最后一段后添加大括号，在大括号里面的每一条语句都要添加分号。<br>2.在文中的给指定PC设置ip可以不选择，看要求.</p></blockquote><h2 id="测试"><a href="#测试" class="headerlink" title="测试:"></a>测试:</h2><p>设置客户端网卡为自动获取，如果不能获取，Linux进行安全设置<br>service  firewalld  stop<br>setenforce  0</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>MySQL入门第一篇</title>
-    <link href="/2020/07/19/MySQL(1)/"/>
-    <url>/2020/07/19/MySQL(1)/</url>
-    
-    <content type="html"><![CDATA[<h1 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h1><span id="more"></span><p>show database；  </p><blockquote><p>&#x2F;&#x2F;显示所有数据库，数据库的语句格式都是分号结尾 </p></blockquote><p>use &lt;数据库名&gt;  </p><blockquote><p>&#x2F;&#x2F;进入数据库  </p></blockquote><p>show tables； </p><blockquote><p>&#x2F;&#x2F;查看此数据库的所有表  </p></blockquote><p>create databases &lt;库名&gt;；</p><blockquote><p>&#x2F;&#x2F;新建库  </p></blockquote><p>create table &lt;新表名&gt; （字段名,数据类型,字段名,数据类型….）    </p><blockquote><p>&#x2F;&#x2F;创建表，注意：要先进库，才能建表   </p></blockquote><p>例如:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs MySQL">   mysql&gt; create table xs  <br>       (<br>           学号 char(6)    not null primary key,  <br>           姓名 char(8)    not null,  <br>           专业名 char(10) null,  <br>           性别 tinyint(1) not null default 1,  <br>           出生日期 date not null,  <br>           总学分 tinyint(1) null，  <br>           备注 text null  <br>         );  <br>解释:  <br>   1.char：字符类型数据  <br>   2.not null：表示学号不能为空值  <br>   3.primary key：表示学号为主键  <br>   4.tinyint：整形数据，长度为1字节，0-255  <br>   5.default：默认  <br>   6.null ：可以为空值  <br>   7.date ：日期型  <br>   8.text:字符串型  <br></code></pre></td></tr></table></figure><p>drop databases &lt;数据库名&gt;；</p><blockquote><p>&#x2F;&#x2F;删除库</p></blockquote><p>desc &lt;表名&gt;；</p><blockquote><p>&#x2F;&#x2F;查看表结构</p></blockquote><p>alter databases &lt;库名&gt;</p><blockquote><p>&#x2F;&#x2F;修改数据库</p></blockquote><p>alter table &lt;表名&gt;</p><blockquote><p>&#x2F;&#x2F;修改表  </p></blockquote><p>例如:  </p><pre><code class="MySQL">    alter table &lt;表名&gt; add primary key (学号，课程号)        //为表中添加主键为学号，课程号。</code></pre>]]></content>
+    <content type="html"><![CDATA[<h1 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h1><span id="more"></span><p>insert into &lt;表名&gt; values (在表中插入的数据);   </p><blockquote><p>&#x2F;&#x2F;在表中插入数据，方法有很多种，这里只写一种，注意，在表里插入的数据要对应你建表的格式。</p></blockquote><p>例如: </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs MySQL">insert into xs (&#x27;201901&#x27;,&#x27;张三&#x27;, &#x27;计算机&#x27;,1,&#x27;2000-01-02&#x27;,58);  <br>//此条数据对应上一篇文章的表，字符型数据添加时必须带单引号，然后两条数据之间用逗号隔开，注意，MySQL只能识别英文标点。  <br></code></pre></td></tr></table></figure><p>delete from &lt;表名&gt; where &lt;条件&gt;;</p><blockquote><p>&#x2F;&#x2F;删除表中记录</p></blockquote><p>update &lt;表明&gt; set 字段名&#x3D;’值’ where &lt;条件&gt;;</p><blockquote><p>&#x2F;&#x2F;修改表中记录</p></blockquote><p>select * from &lt;表名&gt;;</p><blockquote><p>&#x2F;&#x2F;查询表中记录</p></blockquote>]]></content>
     
     
     <categories>
@@ -454,11 +429,11 @@
   
   
   <entry>
-    <title>MySQL入门第二篇</title>
-    <link href="/2020/07/19/MySQL(2)/"/>
-    <url>/2020/07/19/MySQL(2)/</url>
+    <title>MySQL入门第一篇</title>
+    <link href="/2020/07/19/MySQL(1)/"/>
+    <url>/2020/07/19/MySQL(1)/</url>
     
-    <content type="html"><![CDATA[<h1 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h1><span id="more"></span><p>insert into &lt;表名&gt; values (在表中插入的数据);   </p><blockquote><p>&#x2F;&#x2F;在表中插入数据，方法有很多种，这里只写一种，注意，在表里插入的数据要对应你建表的格式。</p></blockquote><p>例如: </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs MySQL">insert into xs (&#x27;201901&#x27;,&#x27;张三&#x27;, &#x27;计算机&#x27;,1,&#x27;2000-01-02&#x27;,58);  <br>//此条数据对应上一篇文章的表，字符型数据添加时必须带单引号，然后两条数据之间用逗号隔开，注意，MySQL只能识别英文标点。  <br></code></pre></td></tr></table></figure><p>delete from &lt;表名&gt; where &lt;条件&gt;;</p><blockquote><p>&#x2F;&#x2F;删除表中记录</p></blockquote><p>update &lt;表明&gt; set 字段名&#x3D;’值’ where &lt;条件&gt;;</p><blockquote><p>&#x2F;&#x2F;修改表中记录</p></blockquote><p>select * from &lt;表名&gt;;</p><blockquote><p>&#x2F;&#x2F;查询表中记录</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h1><span id="more"></span><p>show database；  </p><blockquote><p>&#x2F;&#x2F;显示所有数据库，数据库的语句格式都是分号结尾 </p></blockquote><p>use &lt;数据库名&gt;  </p><blockquote><p>&#x2F;&#x2F;进入数据库  </p></blockquote><p>show tables； </p><blockquote><p>&#x2F;&#x2F;查看此数据库的所有表  </p></blockquote><p>create databases &lt;库名&gt;；</p><blockquote><p>&#x2F;&#x2F;新建库  </p></blockquote><p>create table &lt;新表名&gt; （字段名,数据类型,字段名,数据类型….）    </p><blockquote><p>&#x2F;&#x2F;创建表，注意：要先进库，才能建表   </p></blockquote><p>例如:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs MySQL">   mysql&gt; create table xs  <br>       (<br>           学号 char(6)    not null primary key,  <br>           姓名 char(8)    not null,  <br>           专业名 char(10) null,  <br>           性别 tinyint(1) not null default 1,  <br>           出生日期 date not null,  <br>           总学分 tinyint(1) null，  <br>           备注 text null  <br>         );  <br>解释:  <br>   1.char：字符类型数据  <br>   2.not null：表示学号不能为空值  <br>   3.primary key：表示学号为主键  <br>   4.tinyint：整形数据，长度为1字节，0-255  <br>   5.default：默认  <br>   6.null ：可以为空值  <br>   7.date ：日期型  <br>   8.text:字符串型  <br></code></pre></td></tr></table></figure><p>drop databases &lt;数据库名&gt;；</p><blockquote><p>&#x2F;&#x2F;删除库</p></blockquote><p>desc &lt;表名&gt;；</p><blockquote><p>&#x2F;&#x2F;查看表结构</p></blockquote><p>alter databases &lt;库名&gt;</p><blockquote><p>&#x2F;&#x2F;修改数据库</p></blockquote><p>alter table &lt;表名&gt;</p><blockquote><p>&#x2F;&#x2F;修改表  </p></blockquote><p>例如:  </p><pre><code class="MySQL">    alter table &lt;表名&gt; add primary key (学号，课程号)        //为表中添加主键为学号，课程号。</code></pre>]]></content>
     
     
     <categories>
@@ -504,11 +479,11 @@
   
   
   <entry>
-    <title>cd</title>
-    <link href="/2020/07/19/Linux/cd/"/>
-    <url>/2020/07/19/Linux/cd/</url>
+    <title>Web服务</title>
+    <link href="/2020/07/19/Linux/Web/"/>
+    <url>/2020/07/19/Linux/Web/</url>
     
-    <content type="html"><![CDATA[<h1 id="cd的应用"><a href="#cd的应用" class="headerlink" title="cd的应用"></a>cd的应用</h1><span id="more"></span><h2 id="cd-（目录路径）"><a href="#cd-（目录路径）" class="headerlink" title="cd （目录路径）"></a>cd （目录路径）</h2><blockquote><p>&#x2F;&#x2F;实现切换目录  </p></blockquote><h2 id="x2F"><a href="#x2F" class="headerlink" title="&#x2F;"></a>&#x2F;</h2><blockquote><p>&#x2F;&#x2F;根目录  </p></blockquote><h2 id="home"><a href="#home" class="headerlink" title="home"></a>home</h2><blockquote><p>&#x2F;&#x2F;家目录  </p></blockquote><h2 id=""><a href="#" class="headerlink" title="~"></a>~</h2><blockquote><p>&#x2F;&#x2F;主目录  </p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="Linxu中的网络服务之一-Web服务-httpd"><a href="#Linxu中的网络服务之一-Web服务-httpd" class="headerlink" title="Linxu中的网络服务之一    Web服务(httpd)"></a>Linxu中的网络服务之一    Web服务(httpd)</h1><span id="more"></span><p>rpm -q httpd</p><blockquote><p>&#x2F;&#x2F;检查Web服务是否安装</p></blockquote><p>yum install -y httpd</p><blockquote><p>&#x2F;&#x2F;安装httpd软件包  </p></blockquote><p>service httpd start</p><blockquote><p>&#x2F;&#x2F;启动httpd服务  </p></blockquote><p>service  firewalld  stop</p><blockquote><p>&#x2F;&#x2F;关闭防火墙  </p></blockquote><p>setenforce  0</p><blockquote><p>&#x2F;&#x2F;关闭安全策略  </p></blockquote><p>cd &#x2F;var&#x2F;www&#x2F;html</p><blockquote><p>&#x2F;&#x2F;默认网页的文本储存位置<br>&#x2F;&#x2F;var是用户文件  </p></blockquote><p>vi index.html</p><blockquote><p>&#x2F;&#x2F;是网站(index)默认(首页)的文档  </p></blockquote><p>vi &#x2F;etc&#x2F;httpd&#x2F;conf&#x2F;httpd.conf</p><blockquote><p>&#x2F;&#x2F;http的配置服务  </p></blockquote><h3 id="配置文件里的参数-全局配置"><a href="#配置文件里的参数-全局配置" class="headerlink" title="配置文件里的参数(全局配置):"></a>配置文件里的参数(全局配置):</h3><p>ServerRoot “&#x2F;etc&#x2F;httpd”(31行)</p><blockquote><p>&#x2F;&#x2F;软件包总目录  </p></blockquote><p>Listen 80</p><blockquote><p>&#x2F;&#x2F;设置服务的端口，默认省略ip，表示监听本机所有ip的80端口，如果添加其他端口在下一行输入Listenxx即可  </p></blockquote><p>Include conf.modules.d&#x2F;*.conf </p><blockquote><p>&#x2F;&#x2F;补充服务，Include(路径) ,引用</p></blockquote><p>User<br>Group</p><blockquote><p>&#x2F;&#x2F;当阿帕奇安装的时候，系统会自动创建一个用户和用户组,(66行和67行)  </p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Linux">&lt; Directory &gt;<br>AllowOverride none<br>Require all denied|granted<br>&lt; /Directory &gt;<br>//网站目录的访问权限，默认都是拒绝的(102行-105行)，如果设置成granted表示允许访问。<br>DocumentRoot &quot;/var/www/html&quot;<br>//网站的根目录(119行) <br>&lt;IfModule dir_module&gt;  <br>  DirectoryIndex index.html  <br>  &lt;/IfModule&gt;<br>//设定网站的默认页(首页,162行-164行)  <br>IncludeOptional conf.d/*.conf<br>//加载其他的配置文件(352行),/etc/httpd/conf.d/ (完整路径)  <br></code></pre></td></tr></table></figure><h2 id="基于多个ip地址的虚拟主机"><a href="#基于多个ip地址的虚拟主机" class="headerlink" title="基于多个ip地址的虚拟主机"></a>基于多个ip地址的虚拟主机</h2><p>实现多个网站，一个端口，多ip实现<br>为主机网卡配置多个ip<br>临时增加ip<br>ip addr add 192.168.159.128&#x2F;24 dev ens33</p><blockquote><p>&#x2F;&#x2F;临时配置多ip，然后重启，再次重启后就消失  </p></blockquote><h3 id="如何配置永久的单网卡多ip"><a href="#如何配置永久的单网卡多ip" class="headerlink" title="如何配置永久的单网卡多ip"></a>如何配置永久的单网卡多ip</h3><ol><li><p>cd &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;</p><blockquote><p>&#x2F;&#x2F;进入网卡配置文件  </p></blockquote></li><li><p>vi ifcfg-ens33</p><blockquote><p>&#x2F;&#x2F;目前已经配置了一个ip  </p></blockquote></li><li><p>cp ifcfg-ens33 ifcfg-ens33:1</p><blockquote><p>&#x2F;&#x2F;在同等目录复制出一个一样的网卡配置文件，:1为网卡的子接口  </p></blockquote></li><li><p>vi ifcfg-ens33:1</p></li></ol><blockquote><p>&#x2F;&#x2F;进入ens33:1配置文件，修改配置DEVICE&#x3D;”ens33:1”,然后在更改ip地址即可。  </p></blockquote><h2 id="实现多ip一个端口"><a href="#实现多ip一个端口" class="headerlink" title="实现多ip一个端口:"></a>实现多ip一个端口:</h2><p>在httpd配置文件里增加:<br>a文件  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Linux">&lt;VirtualHost 192.168.159.120:80&gt;<br>ServerName a.com <br>//域名  <br>DocumentRoot &quot;/a&quot;<br>//根目录<br>&lt;font color=“green”&gt;&lt; Directory &quot;/a&quot;&gt;  <br>AllowOverride none  <br>Require all granted  <br>&lt;/Directory&gt;  <br>&lt;/VirtualHost&gt; &lt;/font&gt;<br></code></pre></td></tr></table></figure><p>b文件 </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Linux">&lt;VirtualHost 192.168.159.121:80&gt;<br>ServerName a.com<br>//域名  <br>DocumentRoot &quot;/b&quot;<br>//根目录<br>&lt;Directory &quot;/b&quot;&gt;  <br>AllowOverride none  <br>Require all granted  <br>&lt;/Directory&gt;  <br>&lt;/VirtualHost&gt;<br></code></pre></td></tr></table></figure><h2 id="实现单ip多端口的http配置"><a href="#实现单ip多端口的http配置" class="headerlink" title="实现单ip多端口的http配置"></a>实现单ip多端口的http配置</h2><p>只需更改:<br>&lt; VirtualHost 192.168.159.121:80&gt;<br>…<br></VirtualHost><br>&lt;VirtualHost 192.168.159.121:801&gt;<br>…<br></VirtualHost><br>还要在Listen 80处添加语句来表示你新添加的端口号<br>httpd -t </p><blockquote><p>&#x2F;&#x2F;检查配置文件错误  </p></blockquote>]]></content>
     
     
     <categories>
@@ -529,11 +504,36 @@
   
   
   <entry>
-    <title>chmod</title>
-    <link href="/2020/07/19/Linux/chmod/"/>
-    <url>/2020/07/19/Linux/chmod/</url>
+    <title>DHCP服务</title>
+    <link href="/2020/07/19/Linux/DHCP/"/>
+    <url>/2020/07/19/Linux/DHCP/</url>
     
-    <content type="html"><![CDATA[<h1 id="chmod文件权限应用"><a href="#chmod文件权限应用" class="headerlink" title="chmod文件权限应用"></a>chmod文件权限应用</h1><span id="more"></span> <h2 id="ll-文件路径"><a href="#ll-文件路径" class="headerlink" title="ll (文件路径)"></a>ll (文件路径)</h2><blockquote><p>&#x2F;&#x2F;查看文件权限信息<br>例如:-:rw-:r–:r–:.root:root:19mb:03月17:19:43:passwd<br>详细:(文件类型)(文件所属者权限)(文件组权限)(其他用户权限)(所属者)(所属用户)(文件大小)(创建时间)(文件名)  </p><blockquote><p>rw-r–r–<br>rwx(读、写、运行)<br>-(代表没有这个权限)  </p><blockquote><p>文件类型:<br>管道文件  (p)<br>链接文件  (l)<br>块设备文件  (b)  </p></blockquote></blockquote></blockquote><h2 id="chmod命令-修改文件权限"><a href="#chmod命令-修改文件权限" class="headerlink" title="chmod命令  (修改文件权限)"></a>chmod命令  (修改文件权限)</h2><p>#chmod<font color="FF1493"> [给谁]</font><font color="A0522D">[+或者-或＝]</font><font color="#0000FF">[mode]</font><font color="FF00FF">[文件名]  </font>  </p><blockquote><p>＋&#x2F;&#x2F;添加权限<br>—&#x2F;&#x2F;删除权限<br>＝&#x2F;&#x2F;添加新的权限删除以前的权限    </p><blockquote><p>u&#x2F;&#x2F;文件或目录的所有者<br>g&#x2F;&#x2F;组用户<br>o&#x2F;&#x2F;其他用户<br>a&#x2F;&#x2F;所有    </p><blockquote><p>每种身份的数字类型:<br> r:4<br> w:2<br> x:1<br> o:0<br>可以连写，比如u+rwx，g+rwx，中间用逗号隔开即可。</p></blockquote></blockquote></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="Linux的网络服务之一"><a href="#Linux的网络服务之一" class="headerlink" title="Linux的网络服务之一"></a>Linux的网络服务之一</h1><span id="more"></span><h2 id="dhcp服务"><a href="#dhcp服务" class="headerlink" title="dhcp服务"></a>dhcp服务</h2><p>rpm -q dhcp</p><blockquote><p>&#x2F;&#x2F;检查是否安装dhcp服务  </p></blockquote><p>yum install -y dhcp</p><blockquote><p>&#x2F;&#x2F;安装dhcp服务 </p></blockquote><p>service dhcpd start</p><blockquote><p>&#x2F;&#x2F;开启dhcp服务</p></blockquote><p>service dhcp restart</p><blockquote><p>&#x2F;&#x2F;重启dhcp服务 </p></blockquote><h2 id="注意"><a href="#注意" class="headerlink" title="注意:"></a><font color=“#FF00000”>注意:</font></h2><blockquote><p>在虚拟机上的编辑菜单中的虚拟网络编辑器中取消dhcp服务,由于取消了虚拟机网卡的dhcp服务，我们要给网卡手动配置一个ip，linux上的dhcp服务分配的ip必须和你网卡的ip一样。 </p></blockquote><p>vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</p><blockquote><p>&#x2F;&#x2F;进入网卡的配置文件(ens33不是固定的) </p></blockquote><h2 id="更改网卡配置文件"><a href="#更改网卡配置文件" class="headerlink" title="更改网卡配置文件:"></a>更改网卡配置文件:</h2><p>bootproto&#x3D;static</p><blockquote><p>&#x2F;&#x2F;变成静态  </p></blockquote><p>ONBOOT&#x3D;yes<br>IPADDR&#x3D;</p><blockquote><p>&#x2F;&#x2F;ip地址  </p></blockquote><p>NETMASK&#x3D;</p><blockquote><p>&#x2F;&#x2F;子网掩码</p></blockquote><p>GATEWAY&#x3D;</p><blockquote><p>&#x2F;&#x2F;网关 ,网络上默认网关:8.8.8.8  </p></blockquote><p>DNS1&#x3D;</p><blockquote><p>&#x2F;&#x2F;DNS服务  </p></blockquote><h2 id="配置完要重启网络服务"><a href="#配置完要重启网络服务" class="headerlink" title="配置完要重启网络服务"></a>配置完要重启网络服务</h2><p>service network restart</p><blockquote><p>&#x2F;&#x2F;重启网卡 </p></blockquote><h2 id="配置dhcp的配置文件"><a href="#配置dhcp的配置文件" class="headerlink" title="配置dhcp的配置文件:"></a>配置dhcp的配置文件:</h2><p>vi &#x2F;etc&#x2F;dhcp&#x2F;dhcpd.conf</p><blockquote><p>&#x2F;&#x2F;dhcp的配置文件</p></blockquote><p>subnet 192.168.100.0 netmask 255.255.255.0{</p><blockquote><p>&#x2F;&#x2F;定义网络地址和子网掩码</p></blockquote><p>range 192.168.100.200 192.168.100.251;</p><blockquote><p>&#x2F;&#x2F;分配ip地址的范围(写完加分号) </p></blockquote><p>option routers 192.168.100.2;</p><blockquote><p>&#x2F;&#x2F;配置网关  </p></blockquote><p>option domain-name-servers 8.8.8.8;</p><blockquote><p>&#x2F;&#x2F;配置DNS  </p></blockquote><p>default-lease-time 600;</p><blockquote><p>&#x2F;&#x2F;配置租约时间(默认,单位为秒)  </p></blockquote><p>max-lease-time 7200;</p><blockquote><p>&#x2F;&#x2F;配置租约时间(最大,单位为秒)  </p></blockquote><p>host xxx{ </p><blockquote><p>&#x2F;&#x2F;指定机器使用ip(xxx代表主机机器名，自行取名，选配)  </p></blockquote><p>hardware ethernet xx:xx:xx:xx:xx:xx:; </p><blockquote><p>&#x2F;&#x2F;指定机器的物理地址(xxx代表指定机器的物理地址)  </p></blockquote><p>fixed-address xxxxxx;</p><blockquote><p>&#x2F;&#x2F;指定机器的ip地址(xxx代表你要给的ip地址)  </p></blockquote><p>}<br>}<br>service dhcp restar</p><blockquote><p>&#x2F;&#x2F;重启dhcp服务  </p></blockquote><h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意:"></a><font color=“#FF00000”>注意:</font></h2><blockquote><p>1.在dhcp配置文件中，记得要在第一段和最后一段后添加大括号，在大括号里面的每一条语句都要添加分号。<br>2.在文中的给指定PC设置ip可以不选择，看要求.</p></blockquote><h2 id="测试"><a href="#测试" class="headerlink" title="测试:"></a>测试:</h2><p>设置客户端网卡为自动获取，如果不能获取，Linux进行安全设置<br>service  firewalld  stop<br>setenforce  0</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>cd</title>
+    <link href="/2020/07/19/Linux/cd/"/>
+    <url>/2020/07/19/Linux/cd/</url>
+    
+    <content type="html"><![CDATA[<h1 id="cd的应用"><a href="#cd的应用" class="headerlink" title="cd的应用"></a>cd的应用</h1><span id="more"></span><h2 id="cd-（目录路径）"><a href="#cd-（目录路径）" class="headerlink" title="cd （目录路径）"></a>cd （目录路径）</h2><blockquote><p>&#x2F;&#x2F;实现切换目录  </p></blockquote><h2 id="x2F"><a href="#x2F" class="headerlink" title="&#x2F;"></a>&#x2F;</h2><blockquote><p>&#x2F;&#x2F;根目录  </p></blockquote><h2 id="home"><a href="#home" class="headerlink" title="home"></a>home</h2><blockquote><p>&#x2F;&#x2F;家目录  </p></blockquote><h2 id=""><a href="#" class="headerlink" title="~"></a>~</h2><blockquote><p>&#x2F;&#x2F;主目录  </p></blockquote>]]></content>
     
     
     <categories>
@@ -579,36 +579,11 @@
   
   
   <entry>
-    <title>date</title>
-    <link href="/2020/07/19/Linux/date/"/>
-    <url>/2020/07/19/Linux/date/</url>
+    <title>fdisk</title>
+    <link href="/2020/07/19/Linux/fdisk/"/>
+    <url>/2020/07/19/Linux/fdisk/</url>
     
-    <content type="html"><![CDATA[<h1 id="date时间应用（课外）"><a href="#date时间应用（课外）" class="headerlink" title="date时间应用（课外）"></a>date时间应用（课外）</h1><span id="more"></span>  <ul><li>date  <blockquote><p>&#x2F;&#x2F;查看操作时间和日期<br>直接用出现<br>2020年4月17日 星期六 ……  </p></blockquote></li><li>第二种表达方法<br>date +%F<blockquote><p>出现结果: 2020-04-17  </p></blockquote></li><li>第三种<br>date “+%F %T”<blockquote><p>引号表示让”年月日时秒分”成为一个不可分割的整体<br>出现结果:2020-04-17 16:00:00  </p></blockquote></li><li>还有好多的用法详情:<br><a href="https://www.cnblogs.com/asxe/p/9317811.html">点击前往</a></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Web服务</title>
-    <link href="/2020/07/19/Linux/Web/"/>
-    <url>/2020/07/19/Linux/Web/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Linxu中的网络服务之一-Web服务-httpd"><a href="#Linxu中的网络服务之一-Web服务-httpd" class="headerlink" title="Linxu中的网络服务之一    Web服务(httpd)"></a>Linxu中的网络服务之一    Web服务(httpd)</h1><span id="more"></span><p>rpm -q httpd</p><blockquote><p>&#x2F;&#x2F;检查Web服务是否安装</p></blockquote><p>yum install -y httpd</p><blockquote><p>&#x2F;&#x2F;安装httpd软件包  </p></blockquote><p>service httpd start</p><blockquote><p>&#x2F;&#x2F;启动httpd服务  </p></blockquote><p>service  firewalld  stop</p><blockquote><p>&#x2F;&#x2F;关闭防火墙  </p></blockquote><p>setenforce  0</p><blockquote><p>&#x2F;&#x2F;关闭安全策略  </p></blockquote><p>cd &#x2F;var&#x2F;www&#x2F;html</p><blockquote><p>&#x2F;&#x2F;默认网页的文本储存位置<br>&#x2F;&#x2F;var是用户文件  </p></blockquote><p>vi index.html</p><blockquote><p>&#x2F;&#x2F;是网站(index)默认(首页)的文档  </p></blockquote><p>vi &#x2F;etc&#x2F;httpd&#x2F;conf&#x2F;httpd.conf</p><blockquote><p>&#x2F;&#x2F;http的配置服务  </p></blockquote><h3 id="配置文件里的参数-全局配置"><a href="#配置文件里的参数-全局配置" class="headerlink" title="配置文件里的参数(全局配置):"></a>配置文件里的参数(全局配置):</h3><p>ServerRoot “&#x2F;etc&#x2F;httpd”(31行)</p><blockquote><p>&#x2F;&#x2F;软件包总目录  </p></blockquote><p>Listen 80</p><blockquote><p>&#x2F;&#x2F;设置服务的端口，默认省略ip，表示监听本机所有ip的80端口，如果添加其他端口在下一行输入Listenxx即可  </p></blockquote><p>Include conf.modules.d&#x2F;*.conf </p><blockquote><p>&#x2F;&#x2F;补充服务，Include(路径) ,引用</p></blockquote><p>User<br>Group</p><blockquote><p>&#x2F;&#x2F;当阿帕奇安装的时候，系统会自动创建一个用户和用户组,(66行和67行)  </p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Linux">&lt; Directory &gt;<br>AllowOverride none<br>Require all denied|granted<br>&lt; /Directory &gt;<br>//网站目录的访问权限，默认都是拒绝的(102行-105行)，如果设置成granted表示允许访问。<br>DocumentRoot &quot;/var/www/html&quot;<br>//网站的根目录(119行) <br>&lt;IfModule dir_module&gt;  <br>  DirectoryIndex index.html  <br>  &lt;/IfModule&gt;<br>//设定网站的默认页(首页,162行-164行)  <br>IncludeOptional conf.d/*.conf<br>//加载其他的配置文件(352行),/etc/httpd/conf.d/ (完整路径)  <br></code></pre></td></tr></table></figure><h2 id="基于多个ip地址的虚拟主机"><a href="#基于多个ip地址的虚拟主机" class="headerlink" title="基于多个ip地址的虚拟主机"></a>基于多个ip地址的虚拟主机</h2><p>实现多个网站，一个端口，多ip实现<br>为主机网卡配置多个ip<br>临时增加ip<br>ip addr add 192.168.159.128&#x2F;24 dev ens33</p><blockquote><p>&#x2F;&#x2F;临时配置多ip，然后重启，再次重启后就消失  </p></blockquote><h3 id="如何配置永久的单网卡多ip"><a href="#如何配置永久的单网卡多ip" class="headerlink" title="如何配置永久的单网卡多ip"></a>如何配置永久的单网卡多ip</h3><ol><li><p>cd &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;</p><blockquote><p>&#x2F;&#x2F;进入网卡配置文件  </p></blockquote></li><li><p>vi ifcfg-ens33</p><blockquote><p>&#x2F;&#x2F;目前已经配置了一个ip  </p></blockquote></li><li><p>cp ifcfg-ens33 ifcfg-ens33:1</p><blockquote><p>&#x2F;&#x2F;在同等目录复制出一个一样的网卡配置文件，:1为网卡的子接口  </p></blockquote></li><li><p>vi ifcfg-ens33:1</p></li></ol><blockquote><p>&#x2F;&#x2F;进入ens33:1配置文件，修改配置DEVICE&#x3D;”ens33:1”,然后在更改ip地址即可。  </p></blockquote><h2 id="实现多ip一个端口"><a href="#实现多ip一个端口" class="headerlink" title="实现多ip一个端口:"></a>实现多ip一个端口:</h2><p>在httpd配置文件里增加:<br>a文件  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Linux">&lt;VirtualHost 192.168.159.120:80&gt;<br>ServerName a.com <br>//域名  <br>DocumentRoot &quot;/a&quot;<br>//根目录<br>&lt;font color=“green”&gt;&lt; Directory &quot;/a&quot;&gt;  <br>AllowOverride none  <br>Require all granted  <br>&lt;/Directory&gt;  <br>&lt;/VirtualHost&gt; &lt;/font&gt;<br></code></pre></td></tr></table></figure><p>b文件 </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Linux">&lt;VirtualHost 192.168.159.121:80&gt;<br>ServerName a.com<br>//域名  <br>DocumentRoot &quot;/b&quot;<br>//根目录<br>&lt;Directory &quot;/b&quot;&gt;  <br>AllowOverride none  <br>Require all granted  <br>&lt;/Directory&gt;  <br>&lt;/VirtualHost&gt;<br></code></pre></td></tr></table></figure><h2 id="实现单ip多端口的http配置"><a href="#实现单ip多端口的http配置" class="headerlink" title="实现单ip多端口的http配置"></a>实现单ip多端口的http配置</h2><p>只需更改:<br>&lt; VirtualHost 192.168.159.121:80&gt;<br>…<br></VirtualHost><br>&lt;VirtualHost 192.168.159.121:801&gt;<br>…<br></VirtualHost><br>还要在Listen 80处添加语句来表示你新添加的端口号<br>httpd -t </p><blockquote><p>&#x2F;&#x2F;检查配置文件错误  </p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h1><h2 id="fdisk磁盘分区操作"><a href="#fdisk磁盘分区操作" class="headerlink" title="fdisk磁盘分区操作"></a>fdisk磁盘分区操作</h2><span id="more"></span> <blockquote><p>接口：SCSI和IDE和SATA<br>主分区（最多1-4个）、扩展分区（最多0-1个）、逻辑分区（无数个）<br>磁盘编号：由三位字母与一位数字组成<br>主分区：&#x2F;dev&#x2F;sdb1、&#x2F;dev&#x2F;sdb2<br>扩展分区：&#x2F;dev&#x2F;sdb3<br>逻辑分区：&#x2F;dev&#x2F;sdb5、&#x2F;dev&#x2F;sdb6……（以此类推）</p></blockquote><p>fdisk -l</p><blockquote><p>查看分区情况</p></blockquote><p>fdisk &#x2F;dev&#x2F;sdb</p><blockquote><p>进入磁盘编辑模式</p></blockquote><h3 id="子命令"><a href="#子命令" class="headerlink" title="子命令"></a>子命令</h3><ul><li>n <blockquote><p>&#x2F;&#x2F;新建一个分区  </p></blockquote></li><li>p    <blockquote><p>&#x2F;&#x2F;列出分区表  </p></blockquote></li><li>l    <blockquote><p>&#x2F;&#x2F;显示分区文件类型列表  </p></blockquote></li><li>t    <blockquote><p>&#x2F;&#x2F;改变分区文件类型  </p></blockquote></li><li>m<blockquote><p>&#x2F;&#x2F;列出帮助信息  </p></blockquote></li><li>d   <blockquote><p>&#x2F;&#x2F;删除分区  </p></blockquote></li><li>w     <blockquote><p>&#x2F;&#x2F;保存分区  </p></blockquote></li><li>q    <blockquote><p>&#x2F;&#x2F;不保存退出分区  </p></blockquote><h2 id="磁盘的格式化操作"><a href="#磁盘的格式化操作" class="headerlink" title="磁盘的格式化操作"></a>磁盘的格式化操作</h2><p>mkfs（格式化的文件系统类型）（分区名称</p><h1 id="文件的挂载与卸载"><a href="#文件的挂载与卸载" class="headerlink" title="文件的挂载与卸载"></a>文件的挂载与卸载</h1><p>mount (选项(可有可无))（分区）（挂载点<br>例如：  </p><blockquote><p>mount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;m1</p></blockquote></li></ul><p>卸载命令格式：<br>umount (分区)(挂载点)<br>例如：  </p><blockquote><p>umount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;m1</p></blockquote><h2 id="自动挂载："><a href="#自动挂载：" class="headerlink" title="自动挂载："></a>自动挂载：</h2><p>1.设置开机自动挂载<br>2.增加自动挂载磁盘信息， 修改（vim &#x2F;etc&#x2F;fstab）配置文件：  </p><blockquote><p>vi&#x2F;etc&#x2F;fstab</p></blockquote><p>3.添加以下信息  </p><h2 id="gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）"><a href="#gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）" class="headerlink" title="gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）"></a>gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）</h2><p>gdisk （要分区的磁盘）</p><blockquote><p>&#x2F;&#x2F;进入分区，开始划分,里面和fdisk一样，保存后要格式化才能使用</p></blockquote>]]></content>
     
     
     <categories>
@@ -654,11 +629,11 @@
   
   
   <entry>
-    <title>fdisk</title>
-    <link href="/2020/07/19/Linux/fdisk/"/>
-    <url>/2020/07/19/Linux/fdisk/</url>
+    <title>date</title>
+    <link href="/2020/07/19/Linux/date/"/>
+    <url>/2020/07/19/Linux/date/</url>
     
-    <content type="html"><![CDATA[<h1 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h1><h2 id="fdisk磁盘分区操作"><a href="#fdisk磁盘分区操作" class="headerlink" title="fdisk磁盘分区操作"></a>fdisk磁盘分区操作</h2><span id="more"></span> <blockquote><p>接口：SCSI和IDE和SATA<br>主分区（最多1-4个）、扩展分区（最多0-1个）、逻辑分区（无数个）<br>磁盘编号：由三位字母与一位数字组成<br>主分区：&#x2F;dev&#x2F;sdb1、&#x2F;dev&#x2F;sdb2<br>扩展分区：&#x2F;dev&#x2F;sdb3<br>逻辑分区：&#x2F;dev&#x2F;sdb5、&#x2F;dev&#x2F;sdb6……（以此类推）</p></blockquote><p>fdisk -l</p><blockquote><p>查看分区情况</p></blockquote><p>fdisk &#x2F;dev&#x2F;sdb</p><blockquote><p>进入磁盘编辑模式</p></blockquote><h3 id="子命令"><a href="#子命令" class="headerlink" title="子命令"></a>子命令</h3><ul><li>n <blockquote><p>&#x2F;&#x2F;新建一个分区  </p></blockquote></li><li>p    <blockquote><p>&#x2F;&#x2F;列出分区表  </p></blockquote></li><li>l    <blockquote><p>&#x2F;&#x2F;显示分区文件类型列表  </p></blockquote></li><li>t    <blockquote><p>&#x2F;&#x2F;改变分区文件类型  </p></blockquote></li><li>m<blockquote><p>&#x2F;&#x2F;列出帮助信息  </p></blockquote></li><li>d   <blockquote><p>&#x2F;&#x2F;删除分区  </p></blockquote></li><li>w     <blockquote><p>&#x2F;&#x2F;保存分区  </p></blockquote></li><li>q    <blockquote><p>&#x2F;&#x2F;不保存退出分区  </p></blockquote><h2 id="磁盘的格式化操作"><a href="#磁盘的格式化操作" class="headerlink" title="磁盘的格式化操作"></a>磁盘的格式化操作</h2><p>mkfs（格式化的文件系统类型）（分区名称</p><h1 id="文件的挂载与卸载"><a href="#文件的挂载与卸载" class="headerlink" title="文件的挂载与卸载"></a>文件的挂载与卸载</h1><p>mount (选项(可有可无))（分区）（挂载点<br>例如：  </p><blockquote><p>mount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;m1</p></blockquote></li></ul><p>卸载命令格式：<br>umount (分区)(挂载点)<br>例如：  </p><blockquote><p>umount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;m1</p></blockquote><h2 id="自动挂载："><a href="#自动挂载：" class="headerlink" title="自动挂载："></a>自动挂载：</h2><p>1.设置开机自动挂载<br>2.增加自动挂载磁盘信息， 修改（vim &#x2F;etc&#x2F;fstab）配置文件：  </p><blockquote><p>vi&#x2F;etc&#x2F;fstab</p></blockquote><p>3.添加以下信息  </p><h2 id="gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）"><a href="#gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）" class="headerlink" title="gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）"></a>gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）</h2><p>gdisk （要分区的磁盘）</p><blockquote><p>&#x2F;&#x2F;进入分区，开始划分,里面和fdisk一样，保存后要格式化才能使用</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="date时间应用（课外）"><a href="#date时间应用（课外）" class="headerlink" title="date时间应用（课外）"></a>date时间应用（课外）</h1><span id="more"></span>  <ul><li>date  <blockquote><p>&#x2F;&#x2F;查看操作时间和日期<br>直接用出现<br>2020年4月17日 星期六 ……  </p></blockquote></li><li>第二种表达方法<br>date +%F<blockquote><p>出现结果: 2020-04-17  </p></blockquote></li><li>第三种<br>date “+%F %T”<blockquote><p>引号表示让”年月日时秒分”成为一个不可分割的整体<br>出现结果:2020-04-17 16:00:00  </p></blockquote></li><li>还有好多的用法详情:<br><a href="https://www.cnblogs.com/asxe/p/9317811.html">点击前往</a></li></ul>]]></content>
     
     
     <categories>
@@ -679,11 +654,11 @@
   
   
   <entry>
-    <title>grep</title>
-    <link href="/2020/07/19/Linux/grep/"/>
-    <url>/2020/07/19/Linux/grep/</url>
+    <title>chmod</title>
+    <link href="/2020/07/19/Linux/chmod/"/>
+    <url>/2020/07/19/Linux/chmod/</url>
     
-    <content type="html"><![CDATA[<h1 id="grep-查找文档字符-的应用"><a href="#grep-查找文档字符-的应用" class="headerlink" title="grep(查找文档字符)的应用"></a>grep(查找文档字符)的应用</h1><span id="more"></span>   <p>grep (要查询的字符)  (文档路径) </p><blockquote><p>&#x2F;&#x2F;查询文档指定字符    </p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="chmod文件权限应用"><a href="#chmod文件权限应用" class="headerlink" title="chmod文件权限应用"></a>chmod文件权限应用</h1><span id="more"></span> <h2 id="ll-文件路径"><a href="#ll-文件路径" class="headerlink" title="ll (文件路径)"></a>ll (文件路径)</h2><blockquote><p>&#x2F;&#x2F;查看文件权限信息<br>例如:-:rw-:r–:r–:.root:root:19mb:03月17:19:43:passwd<br>详细:(文件类型)(文件所属者权限)(文件组权限)(其他用户权限)(所属者)(所属用户)(文件大小)(创建时间)(文件名)  </p><blockquote><p>rw-r–r–<br>rwx(读、写、运行)<br>-(代表没有这个权限)  </p><blockquote><p>文件类型:<br>管道文件  (p)<br>链接文件  (l)<br>块设备文件  (b)  </p></blockquote></blockquote></blockquote><h2 id="chmod命令-修改文件权限"><a href="#chmod命令-修改文件权限" class="headerlink" title="chmod命令  (修改文件权限)"></a>chmod命令  (修改文件权限)</h2><p>#chmod<font color="FF1493"> [给谁]</font><font color="A0522D">[+或者-或＝]</font><font color="#0000FF">[mode]</font><font color="FF00FF">[文件名]  </font>  </p><blockquote><p>＋&#x2F;&#x2F;添加权限<br>—&#x2F;&#x2F;删除权限<br>＝&#x2F;&#x2F;添加新的权限删除以前的权限    </p><blockquote><p>u&#x2F;&#x2F;文件或目录的所有者<br>g&#x2F;&#x2F;组用户<br>o&#x2F;&#x2F;其他用户<br>a&#x2F;&#x2F;所有    </p><blockquote><p>每种身份的数字类型:<br> r:4<br> w:2<br> x:1<br> o:0<br>可以连写，比如u+rwx，g+rwx，中间用逗号隔开即可。</p></blockquote></blockquote></blockquote>]]></content>
     
     
     <categories>
@@ -729,36 +704,11 @@
   
   
   <entry>
-    <title>ifconfig</title>
-    <link href="/2020/07/19/Linux/ifconfig/"/>
-    <url>/2020/07/19/Linux/ifconfig/</url>
+    <title>ftp服务</title>
+    <link href="/2020/07/19/Linux/ftp/"/>
+    <url>/2020/07/19/Linux/ftp/</url>
     
-    <content type="html"><![CDATA[<h1 id="关于linux-ifconfig-网络的知识"><a href="#关于linux-ifconfig-网络的知识" class="headerlink" title="关于linux(ifconfig)网络的知识"></a>关于linux(ifconfig)网络的知识</h1><span id="more"></span> <p>作用:用于操作网卡相关指令<br>ifconfig </p><blockquote><p>&#x2F;&#x2F;获取网卡信息  </p></blockquote><p>vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifconfig-XXX</p><blockquote><p>&#x2F;&#x2F;进入XXX网卡配置文件</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Linux">inet addr <br>//ip地址    <br>netmask                           <br>//子网掩码    <br>ipaddr  <br>//配置文件的ip地址  <br>GATEWAY<br>//网关地址  <br>DNS<br>//DNS服务 <br></code></pre></td></tr></table></figure><h3 id="在网卡配置文件里更改ip操作"><a href="#在网卡配置文件里更改ip操作" class="headerlink" title="在网卡配置文件里更改ip操作"></a>在网卡配置文件里更改ip操作</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs Linux">bootproto=static                                      <br>//变成静态  <br>ONBOOT=yes<br>//在系统启动时，是否启动网卡                                          <br>IPADDR=.....                                               <br>//ip地址  <br>NETMASK=.......                                              <br>//子网掩码  <br>GATEWAY=......                                                   <br>//网关，网络上默认网关:8.8.8.8  <br>DNS1=........                                                  <br>//DNS服务 <br></code></pre></td></tr></table></figure><p>配置完要重启网络服务  </p><blockquote><p>service network restart 或 systemctl restart network<br>&#x2F;&#x2F;reh7或者centos7以上版本可以使用  </p></blockquote><p>启动网络服务:  </p><blockquote><p>service network start  或 systemctl start network<br>&#x2F;&#x2F;(reh7或者centos7以上版本可以使用)</p></blockquote><p>停止网络服务:    </p><blockquote><p>service network stop 或 systemctl stop network<br>&#x2F;&#x2F; (reh7或者centos7以上版本可以使用) </p></blockquote><p>客户端域名解析服务器的配置文件（临时修改dns）:  </p><blockquote><p>&#x2F;etc&#x2F;resolv.conf<br>&#x2F;&#x2F;DNS客户机配置文件（重启会被重置）</p></blockquote><h2 id="reboot指令"><a href="#reboot指令" class="headerlink" title="reboot指令"></a>reboot指令</h2><p>作用:重新启动计算机<br>reboot -w<br>作用:模拟重启，达到只写关机和开机的日志  </p><h2 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h2><p>作用:网络检测命令<br>ping（参数）（主机名或ip地址  </p><blockquote><p>参数:<br>-c<br>&#x2F;&#x2F;数目:在发送指定数目的包后停止<br>-i<br>&#x2F;&#x2F;秒数:设定间隔几秒发送一个网络包给另一台机器，预设值是一秒<br>-s<br>&#x2F;&#x2F;字节数:指定发送的数据字节数，预设值56，加上8字节的ICMP头，一共是64ICMP数据字节<br>-t<br>&#x2F;&#x2F;存活数值:设置存活数值TTL的大小<br>例如:<br>ping -c 3 192.168.1.20</p></blockquote><h2 id="nmcli"><a href="#nmcli" class="headerlink" title="nmcli"></a>nmcli</h2><p>作用:设置网络状态信息<br>nmcli（参数） （命令</p><blockquote><p>参数:<br>connection:连接设备<br>device:设备<br>例如:<br>显示连接:<br>nmcli connection show<br>&#x2F;&#x2F;查看连接状态:<br>nmcli device status<br>&#x2F;&#x2F;启用连接eth0<br>nmcli connection up eth0<br>&#x2F;&#x2F;创建新连接neweth0    </p></blockquote><h2 id="route"><a href="#route" class="headerlink" title="route"></a>route</h2><p>作用:查看路由表信息<br>ROUTE</p><blockquote><p>例如:添加一条默认路由:<br> #rout add default gw 192.168.0.254 </p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>is</title>
-    <link href="/2020/07/19/Linux/ls/"/>
-    <url>/2020/07/19/Linux/ls/</url>
-    
-    <content type="html"><![CDATA[<h1 id="ls的应用"><a href="#ls的应用" class="headerlink" title="ls的应用"></a>ls的应用</h1><span id="more"></span> <p>ls （文档路径</p><blockquote><p>&#x2F;&#x2F;查看此目录的文件信息 </p></blockquote><p>ls -l 缩写：ll  </p><blockquote><p>&#x2F;&#x2F;查看更详细的文件信息</p></blockquote><p>ls -a</p><blockquote><p>&#x2F;&#x2F;显示所有文件及目录包括隐藏文件 </p></blockquote><p>ls -lh </p><blockquote><p>&#x2F;&#x2F;查看可读性更高的文档 （显示文件大小） </p></blockquote><h2 id="文件类型："><a href="#文件类型：" class="headerlink" title="文件类型："></a>文件类型：</h2><p>默认色代表普通文件。<br>红色代表tar包文件。<br>蓝色代表目录文件。<br>水红代表图象文件。<br>青色代表链接文件。（此类文件相当于快捷方式）<br>黄色代表设备文件。   </p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Linux的网络服务之一-FTP服务器"><a href="#Linux的网络服务之一-FTP服务器" class="headerlink" title="Linux的网络服务之一  FTP服务器"></a>Linux的网络服务之一  FTP服务器</h1><span id="more"></span><h3 id="安装ftp软件-vsftpd"><a href="#安装ftp软件-vsftpd" class="headerlink" title="安装ftp软件(vsftpd)"></a>安装ftp软件(vsftpd)</h3><blockquote><p>安装方式1:<br>通过光盘，优盘等存储介质安装(本地安装)<br>方式2:<br>网络安装(已经配置网络能够正常访问) </p></blockquote><p>yum install -y vsftpd</p><blockquote><p>&#x2F;&#x2F;通过网络安装vsftpd服务  </p></blockquote><p>rpm -q vsftpd</p><blockquote><p>&#x2F;&#x2F;确认软件是否安装</p></blockquote><h3 id="配置ftp服务"><a href="#配置ftp服务" class="headerlink" title="配置ftp服务"></a>配置ftp服务</h3><p>service vsftpd start</p><blockquote><p>&#x2F;&#x2F;启动(临时，每次重启都得开启)    </p></blockquote><p>service vsftpd stop</p><blockquote><p>&#x2F;&#x2F;停止vsftpd服务</p></blockquote><p>service vsftpd restart </p><blockquote><p>&#x2F;&#x2F;重启ftp服务  </p></blockquote><p>systemctl enable vsftpd</p><blockquote><p>&#x2F;&#x2F;每次开机自启动vsftpd服务</p></blockquote><h3 id="安全设置"><a href="#安全设置" class="headerlink" title="安全设置"></a>安全设置</h3><p>systemctl stop firewalld</p><blockquote><p>&#x2F;&#x2F;关闭防火墙  </p></blockquote><p>systemctl status firewalld</p><blockquote><p>&#x2F;&#x2F;查看防火墙状态 </p></blockquote><p>systemctl start firewalld</p><blockquote><p>&#x2F;&#x2F;启动防火墙</p></blockquote><p>setenforce 0</p><blockquote><p>&#x2F;&#x2F;关闭安全策略或设置配置文件 &#x2F;etc&#x2F;selinux&#x2F;config  设置 SELINUX&#x3D;disabled(临时)   </p></blockquote><p>firewall-cmd –permanent –zone&#x3D;public –add-service&#x3D;ftp</p><blockquote><p>&#x2F;&#x2F;允许通过vsftpd服务的通过  </p></blockquote><!-- firewall-cmd --reload  //重新加载防火墙  --permanent有这个则ftp服务永久通过  --zone=public也可以不写  或关闭或设置selinux 允许ftp服务  方式1:setsebool ftpd_full_access on  //设置允许ftp-->  <h3 id="访问ftp服务器"><a href="#访问ftp服务器" class="headerlink" title="访问ftp服务器"></a>访问ftp服务器</h3><blockquote><p>在计算机里输入<a href="ftp://linux的ip地址/">ftp://linux的ip地址</a><br>在浏览器里输入<a href="ftp://linux的ip地址/">ftp://linux的ip地址</a><br>在cmd里输入 ftp linux的ip地址<br>默认匿名用户的名字Anonymous<br>密码为空密码  </p></blockquote><h3 id="匿名用户"><a href="#匿名用户" class="headerlink" title="匿名用户"></a>匿名用户</h3><p>cd &#x2F;var&#x2F;ftp</p><blockquote><p>&#x2F;&#x2F;vsftpd对于匿名用户的存储位置   </p></blockquote><p>cd &#x2F;home</p><blockquote><p>&#x2F;&#x2F;vsftpd对于登录用户的文件存储位置是  </p></blockquote><h3 id="配置ftp服务的文件"><a href="#配置ftp服务的文件" class="headerlink" title="配置ftp服务的文件"></a>配置ftp服务的文件</h3><p>vi etc&#x2F;vsftpd&#x2F;vsftpd.conf</p><blockquote><p>&#x2F;&#x2F;vtp的配置文件位置</p></blockquote><p>anonymous_enable&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;设置匿名用户是否可以访问(第12行)  </p></blockquote><p>load_enable&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;允许本地用户访问(第16行)  </p></blockquote><p>write_enable&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;所有用户是否可写(第19行)  </p></blockquote><p>anon_upload_enbale&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;前面有#是被注释掉了，不执行 ,匿名用户是否可以上传(第29行)</p></blockquote><p>anon_mkdir_write_enable&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;是否匿名用户是否可以创建目录（第33行）</p></blockquote><p>anon_other_write_enable&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;打开匿名用户删除和重新命名的权限(手动添加)</p></blockquote><h2 id="注意"><a href="#注意" class="headerlink" title="注意:"></a><font color=“#FF00000”>注意:</font></h2><ol><li>配置完之后重启服务  </li><li>除了设置设置配置文件，还要更改文件的读、写、可读权限。<br>anon_umask&#x3D;022<br>&#x2F;&#x2F;匿名用户的掩码(如果需要，自己添加，含义:如umask是022，这时新建一个权限为666的文档，文件的实际权限为666-022&#x3D;644)<br>umask是在linux中常见的一个东西，它其实是一个掩码。当然，也有umask这样一个命令，它是对用户建立的文件的默认属性的定义。该定义为:假设umask为022，则对于一个文件夹的话，它的默认属性为 777-022&#x3D;755,这也就是我们平时建立文件夹的权限。而对于一般的文件的话，则是用 666-022&#x3D;644.</li></ol><h3 id="普通用户访问ftp配置"><a href="#普通用户访问ftp配置" class="headerlink" title="普通用户访问ftp配置"></a>普通用户访问ftp配置</h3><p>ftpusers&#x3D;  </p><blockquote><p>&#x2F;&#x2F;黑名单，写在这个里的用户不能访问 </p></blockquote><p>user_list&#x3D;</p><blockquote><p>&#x2F;&#x2F;黑白(名单)即可,如果不经过配置，默认的是黑名单<br>怎么配置才能变成白名单呢？<br>在user_list&#x3D;的后面添加用户即可。 </p></blockquote><p>userlist_enable&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;用户列表文件是否启用 </p></blockquote><p>userlist_deny&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;用户列表是否为黑名单，YES（user_list）为黑名单，NO为白名单</p></blockquote><p>userlist_file&#x3D;1.txt(文件)</p><blockquote><p>&#x2F;&#x2F;指定文件,在1.txt里设置白名单</p></blockquote>]]></content>
     
     
     <categories>
@@ -779,11 +729,11 @@
   
   
   <entry>
-    <title>man</title>
-    <link href="/2020/07/19/Linux/man/"/>
-    <url>/2020/07/19/Linux/man/</url>
+    <title>grep</title>
+    <link href="/2020/07/19/Linux/grep/"/>
+    <url>/2020/07/19/Linux/grep/</url>
     
-    <content type="html"><![CDATA[<h1 id="关于linux命令帮助"><a href="#关于linux命令帮助" class="headerlink" title="关于linux命令帮助"></a>关于linux命令帮助</h1><span id="more"></span><p>man</p><blockquote><p>作用:manual，手册（包含了linux中全部命令的手册）<br>退出按q键  </p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="grep-查找文档字符-的应用"><a href="#grep-查找文档字符-的应用" class="headerlink" title="grep(查找文档字符)的应用"></a>grep(查找文档字符)的应用</h1><span id="more"></span>   <p>grep (要查询的字符)  (文档路径) </p><blockquote><p>&#x2F;&#x2F;查询文档指定字符    </p></blockquote>]]></content>
     
     
     <categories>
@@ -829,11 +779,61 @@
   
   
   <entry>
-    <title>ftp服务</title>
-    <link href="/2020/07/19/Linux/ftp/"/>
-    <url>/2020/07/19/Linux/ftp/</url>
+    <title>man</title>
+    <link href="/2020/07/19/Linux/man/"/>
+    <url>/2020/07/19/Linux/man/</url>
     
-    <content type="html"><![CDATA[<h1 id="Linux的网络服务之一-FTP服务器"><a href="#Linux的网络服务之一-FTP服务器" class="headerlink" title="Linux的网络服务之一  FTP服务器"></a>Linux的网络服务之一  FTP服务器</h1><span id="more"></span><h3 id="安装ftp软件-vsftpd"><a href="#安装ftp软件-vsftpd" class="headerlink" title="安装ftp软件(vsftpd)"></a>安装ftp软件(vsftpd)</h3><blockquote><p>安装方式1:<br>通过光盘，优盘等存储介质安装(本地安装)<br>方式2:<br>网络安装(已经配置网络能够正常访问) </p></blockquote><p>yum install -y vsftpd</p><blockquote><p>&#x2F;&#x2F;通过网络安装vsftpd服务  </p></blockquote><p>rpm -q vsftpd</p><blockquote><p>&#x2F;&#x2F;确认软件是否安装</p></blockquote><h3 id="配置ftp服务"><a href="#配置ftp服务" class="headerlink" title="配置ftp服务"></a>配置ftp服务</h3><p>service vsftpd start</p><blockquote><p>&#x2F;&#x2F;启动(临时，每次重启都得开启)    </p></blockquote><p>service vsftpd stop</p><blockquote><p>&#x2F;&#x2F;停止vsftpd服务</p></blockquote><p>service vsftpd restart </p><blockquote><p>&#x2F;&#x2F;重启ftp服务  </p></blockquote><p>systemctl enable vsftpd</p><blockquote><p>&#x2F;&#x2F;每次开机自启动vsftpd服务</p></blockquote><h3 id="安全设置"><a href="#安全设置" class="headerlink" title="安全设置"></a>安全设置</h3><p>systemctl stop firewalld</p><blockquote><p>&#x2F;&#x2F;关闭防火墙  </p></blockquote><p>systemctl status firewalld</p><blockquote><p>&#x2F;&#x2F;查看防火墙状态 </p></blockquote><p>systemctl start firewalld</p><blockquote><p>&#x2F;&#x2F;启动防火墙</p></blockquote><p>setenforce 0</p><blockquote><p>&#x2F;&#x2F;关闭安全策略或设置配置文件 &#x2F;etc&#x2F;selinux&#x2F;config  设置 SELINUX&#x3D;disabled(临时)   </p></blockquote><p>firewall-cmd –permanent –zone&#x3D;public –add-service&#x3D;ftp</p><blockquote><p>&#x2F;&#x2F;允许通过vsftpd服务的通过  </p></blockquote><!-- firewall-cmd --reload  //重新加载防火墙  --permanent有这个则ftp服务永久通过  --zone=public也可以不写  或关闭或设置selinux 允许ftp服务  方式1:setsebool ftpd_full_access on  //设置允许ftp-->  <h3 id="访问ftp服务器"><a href="#访问ftp服务器" class="headerlink" title="访问ftp服务器"></a>访问ftp服务器</h3><blockquote><p>在计算机里输入<a href="ftp://linux的ip地址/">ftp://linux的ip地址</a><br>在浏览器里输入<a href="ftp://linux的ip地址/">ftp://linux的ip地址</a><br>在cmd里输入 ftp linux的ip地址<br>默认匿名用户的名字Anonymous<br>密码为空密码  </p></blockquote><h3 id="匿名用户"><a href="#匿名用户" class="headerlink" title="匿名用户"></a>匿名用户</h3><p>cd &#x2F;var&#x2F;ftp</p><blockquote><p>&#x2F;&#x2F;vsftpd对于匿名用户的存储位置   </p></blockquote><p>cd &#x2F;home</p><blockquote><p>&#x2F;&#x2F;vsftpd对于登录用户的文件存储位置是  </p></blockquote><h3 id="配置ftp服务的文件"><a href="#配置ftp服务的文件" class="headerlink" title="配置ftp服务的文件"></a>配置ftp服务的文件</h3><p>vi etc&#x2F;vsftpd&#x2F;vsftpd.conf</p><blockquote><p>&#x2F;&#x2F;vtp的配置文件位置</p></blockquote><p>anonymous_enable&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;设置匿名用户是否可以访问(第12行)  </p></blockquote><p>load_enable&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;允许本地用户访问(第16行)  </p></blockquote><p>write_enable&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;所有用户是否可写(第19行)  </p></blockquote><p>anon_upload_enbale&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;前面有#是被注释掉了，不执行 ,匿名用户是否可以上传(第29行)</p></blockquote><p>anon_mkdir_write_enable&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;是否匿名用户是否可以创建目录（第33行）</p></blockquote><p>anon_other_write_enable&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;打开匿名用户删除和重新命名的权限(手动添加)</p></blockquote><h2 id="注意"><a href="#注意" class="headerlink" title="注意:"></a><font color=“#FF00000”>注意:</font></h2><ol><li>配置完之后重启服务  </li><li>除了设置设置配置文件，还要更改文件的读、写、可读权限。<br>anon_umask&#x3D;022<br>&#x2F;&#x2F;匿名用户的掩码(如果需要，自己添加，含义:如umask是022，这时新建一个权限为666的文档，文件的实际权限为666-022&#x3D;644)<br>umask是在linux中常见的一个东西，它其实是一个掩码。当然，也有umask这样一个命令，它是对用户建立的文件的默认属性的定义。该定义为:假设umask为022，则对于一个文件夹的话，它的默认属性为 777-022&#x3D;755,这也就是我们平时建立文件夹的权限。而对于一般的文件的话，则是用 666-022&#x3D;644.</li></ol><h3 id="普通用户访问ftp配置"><a href="#普通用户访问ftp配置" class="headerlink" title="普通用户访问ftp配置"></a>普通用户访问ftp配置</h3><p>ftpusers&#x3D;  </p><blockquote><p>&#x2F;&#x2F;黑名单，写在这个里的用户不能访问 </p></blockquote><p>user_list&#x3D;</p><blockquote><p>&#x2F;&#x2F;黑白(名单)即可,如果不经过配置，默认的是黑名单<br>怎么配置才能变成白名单呢？<br>在user_list&#x3D;的后面添加用户即可。 </p></blockquote><p>userlist_enable&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;用户列表文件是否启用 </p></blockquote><p>userlist_deny&#x3D;YES</p><blockquote><p>&#x2F;&#x2F;用户列表是否为黑名单，YES（user_list）为黑名单，NO为白名单</p></blockquote><p>userlist_file&#x3D;1.txt(文件)</p><blockquote><p>&#x2F;&#x2F;指定文件,在1.txt里设置白名单</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="关于linux命令帮助"><a href="#关于linux命令帮助" class="headerlink" title="关于linux命令帮助"></a>关于linux命令帮助</h1><span id="more"></span><p>man</p><blockquote><p>作用:manual，手册（包含了linux中全部命令的手册）<br>退出按q键  </p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>is</title>
+    <link href="/2020/07/19/Linux/ls/"/>
+    <url>/2020/07/19/Linux/ls/</url>
+    
+    <content type="html"><![CDATA[<h1 id="ls的应用"><a href="#ls的应用" class="headerlink" title="ls的应用"></a>ls的应用</h1><span id="more"></span> <p>ls （文档路径</p><blockquote><p>&#x2F;&#x2F;查看此目录的文件信息 </p></blockquote><p>ls -l 缩写：ll  </p><blockquote><p>&#x2F;&#x2F;查看更详细的文件信息</p></blockquote><p>ls -a</p><blockquote><p>&#x2F;&#x2F;显示所有文件及目录包括隐藏文件 </p></blockquote><p>ls -lh </p><blockquote><p>&#x2F;&#x2F;查看可读性更高的文档 （显示文件大小） </p></blockquote><h2 id="文件类型："><a href="#文件类型：" class="headerlink" title="文件类型："></a>文件类型：</h2><p>默认色代表普通文件。<br>红色代表tar包文件。<br>蓝色代表目录文件。<br>水红代表图象文件。<br>青色代表链接文件。（此类文件相当于快捷方式）<br>黄色代表设备文件。   </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ifconfig</title>
+    <link href="/2020/07/19/Linux/ifconfig/"/>
+    <url>/2020/07/19/Linux/ifconfig/</url>
+    
+    <content type="html"><![CDATA[<h1 id="关于linux-ifconfig-网络的知识"><a href="#关于linux-ifconfig-网络的知识" class="headerlink" title="关于linux(ifconfig)网络的知识"></a>关于linux(ifconfig)网络的知识</h1><span id="more"></span> <p>作用:用于操作网卡相关指令<br>ifconfig </p><blockquote><p>&#x2F;&#x2F;获取网卡信息  </p></blockquote><p>vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifconfig-XXX</p><blockquote><p>&#x2F;&#x2F;进入XXX网卡配置文件</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Linux">inet addr <br>//ip地址    <br>netmask                           <br>//子网掩码    <br>ipaddr  <br>//配置文件的ip地址  <br>GATEWAY<br>//网关地址  <br>DNS<br>//DNS服务 <br></code></pre></td></tr></table></figure><h3 id="在网卡配置文件里更改ip操作"><a href="#在网卡配置文件里更改ip操作" class="headerlink" title="在网卡配置文件里更改ip操作"></a>在网卡配置文件里更改ip操作</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs Linux">bootproto=static                                      <br>//变成静态  <br>ONBOOT=yes<br>//在系统启动时，是否启动网卡                                          <br>IPADDR=.....                                               <br>//ip地址  <br>NETMASK=.......                                              <br>//子网掩码  <br>GATEWAY=......                                                   <br>//网关，网络上默认网关:8.8.8.8  <br>DNS1=........                                                  <br>//DNS服务 <br></code></pre></td></tr></table></figure><p>配置完要重启网络服务  </p><blockquote><p>service network restart 或 systemctl restart network<br>&#x2F;&#x2F;reh7或者centos7以上版本可以使用  </p></blockquote><p>启动网络服务:  </p><blockquote><p>service network start  或 systemctl start network<br>&#x2F;&#x2F;(reh7或者centos7以上版本可以使用)</p></blockquote><p>停止网络服务:    </p><blockquote><p>service network stop 或 systemctl stop network<br>&#x2F;&#x2F; (reh7或者centos7以上版本可以使用) </p></blockquote><p>客户端域名解析服务器的配置文件（临时修改dns）:  </p><blockquote><p>&#x2F;etc&#x2F;resolv.conf<br>&#x2F;&#x2F;DNS客户机配置文件（重启会被重置）</p></blockquote><h2 id="reboot指令"><a href="#reboot指令" class="headerlink" title="reboot指令"></a>reboot指令</h2><p>作用:重新启动计算机<br>reboot -w<br>作用:模拟重启，达到只写关机和开机的日志  </p><h2 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h2><p>作用:网络检测命令<br>ping（参数）（主机名或ip地址  </p><blockquote><p>参数:<br>-c<br>&#x2F;&#x2F;数目:在发送指定数目的包后停止<br>-i<br>&#x2F;&#x2F;秒数:设定间隔几秒发送一个网络包给另一台机器，预设值是一秒<br>-s<br>&#x2F;&#x2F;字节数:指定发送的数据字节数，预设值56，加上8字节的ICMP头，一共是64ICMP数据字节<br>-t<br>&#x2F;&#x2F;存活数值:设置存活数值TTL的大小<br>例如:<br>ping -c 3 192.168.1.20</p></blockquote><h2 id="nmcli"><a href="#nmcli" class="headerlink" title="nmcli"></a>nmcli</h2><p>作用:设置网络状态信息<br>nmcli（参数） （命令</p><blockquote><p>参数:<br>connection:连接设备<br>device:设备<br>例如:<br>显示连接:<br>nmcli connection show<br>&#x2F;&#x2F;查看连接状态:<br>nmcli device status<br>&#x2F;&#x2F;启用连接eth0<br>nmcli connection up eth0<br>&#x2F;&#x2F;创建新连接neweth0    </p></blockquote><h2 id="route"><a href="#route" class="headerlink" title="route"></a>route</h2><p>作用:查看路由表信息<br>ROUTE</p><blockquote><p>例如:添加一条默认路由:<br> #rout add default gw 192.168.0.254 </p></blockquote>]]></content>
     
     
     <categories>
@@ -879,11 +879,61 @@
   
   
   <entry>
+    <title>Touch</title>
+    <link href="/2020/07/19/Linux/touch/"/>
+    <url>/2020/07/19/Linux/touch/</url>
+    
+    <content type="html"><![CDATA[<h1 id="touch的应用"><a href="#touch的应用" class="headerlink" title="touch的应用"></a>touch的应用</h1> <span id="more"></span><p> touch (文件路径)</p><blockquote><p>&#x2F;&#x2F;创建文件</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>shutdown</title>
     <link href="/2020/07/19/Linux/shutdown/"/>
     <url>/2020/07/19/Linux/shutdown/</url>
     
     <content type="html"><![CDATA[<h1 id="关于linux关机的知识"><a href="#关于linux关机的知识" class="headerlink" title="关于linux关机的知识"></a>关于linux关机的知识</h1><span id="more"></span><p>shutdown<br>作用:关机<br>服务器慎用<br>shutdown -h now</p><blockquote><p>&#x2F;&#x2F;立即关机</p></blockquote><p>shutdown -h （时间）</p><blockquote><p>&#x2F;&#x2F;定时关机</p></blockquote><blockquote><p>&#x2F;&#x2F;按ctrl+c退出关机计划<br>如果在centos7.x之前的版本：按ctrl+c退出关机计划<br>如果在centos7.x之后的版本：shutdown -c    </p></blockquote><h2 id="其他关机命令"><a href="#其他关机命令" class="headerlink" title="其他关机命令:"></a>其他关机命令:</h2><p>init 0<br>halt<br>poweroff<br>uptime<br>&#x2F;&#x2F;作用:输出计算机的持续在线时间（从计算机开机以来到现在运行的时间）  </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Tail</title>
+    <link href="/2020/07/19/Linux/tail%20head/"/>
+    <url>/2020/07/19/Linux/tail%20head/</url>
+    
+    <content type="html"><![CDATA[<h1 id="hand的应用"><a href="#hand的应用" class="headerlink" title="hand的应用"></a>hand的应用</h1> <span id="more"></span> <p>head (文件路径)</p><blockquote><p>&#x2F;&#x2F;(查看一个文件的前N行，如果不指定，默认10行)</p></blockquote><p>head -n</p><blockquote><p>&#x2F;&#x2F;n＝你要看的行数+文件路径  </p></blockquote><h1 id="tail的应用"><a href="#tail的应用" class="headerlink" title="tail的应用"></a>tail的应用</h1><p>tail (文件路径)</p><blockquote><p>&#x2F;&#x2F;（查看一个文件的末n行，如果不指定，默认10行）</p></blockquote><p>tail -n</p><blockquote><p>&#x2F;&#x2F; n＝你要看的行数 +文件路径</p></blockquote>]]></content>
     
     
     <categories>
@@ -929,86 +979,11 @@
   
   
   <entry>
-    <title>Touch</title>
-    <link href="/2020/07/19/Linux/touch/"/>
-    <url>/2020/07/19/Linux/touch/</url>
-    
-    <content type="html"><![CDATA[<h1 id="touch的应用"><a href="#touch的应用" class="headerlink" title="touch的应用"></a>touch的应用</h1> <span id="more"></span><p> touch (文件路径)</p><blockquote><p>&#x2F;&#x2F;创建文件</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Wc</title>
-    <link href="/2020/07/19/Linux/wc/"/>
-    <url>/2020/07/19/Linux/wc/</url>
-    
-    <content type="html"><![CDATA[<h1 id="wc的应用（扩充）"><a href="#wc的应用（扩充）" class="headerlink" title="wc的应用（扩充）"></a>wc的应用（扩充）</h1><span id="more"></span>  <p>wc   (文件目录)       </p><blockquote><p>&#x2F;&#x2F;（统计文件内容信息（包含行数、单词数、字节数））</p></blockquote><p>wc-l</p><blockquote><p>&#x2F;&#x2F;（行数）</p></blockquote><p>wc-w</p><blockquote><p>&#x2F;&#x2F;（单词数）</p></blockquote><p>wc-c</p><blockquote><p>&#x2F;&#x2F;（字节数）    </p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>uname</title>
     <link href="/2020/07/19/Linux/uname/"/>
     <url>/2020/07/19/Linux/uname/</url>
     
     <content type="html"><![CDATA[<h1 id="关于linux操作系统的知识"><a href="#关于linux操作系统的知识" class="headerlink" title="关于linux操作系统的知识"></a>关于linux操作系统的知识</h1><span id="more"></span><p>uname  </p><blockquote><p>作用:获取计算机操作系统相关的信息 </p></blockquote><p>uname -a</p><blockquote><p>&#x2F;&#x2F;表示获取全部的系统信息（包括，类型、全部主机版本、内核版本、发布时间、开源计划）</p></blockquote><p>nestart -tnlp</p><blockquote><p>&#x2F;&#x2F;查看网络的连接状态<br>选项说明:</p><ul><li>-t:表示只列出tcp协议的链接  </li><li>-n:表示列出ip地址，将协议转化成端口号  </li><li>-l:表示过滤出“state（状态）”列中其值为listen（监听）的连接  </li><li>-p:表示显示发起连接的进程的PID和进程的名称</li></ul></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Useradd</title>
-    <link href="/2020/07/19/Linux/useradd/"/>
-    <url>/2020/07/19/Linux/useradd/</url>
-    
-    <content type="html"><![CDATA[<h1 id="组和用户的详细信息与操作-（重点）"><a href="#组和用户的详细信息与操作-（重点）" class="headerlink" title="组和用户的详细信息与操作  （重点）"></a>组和用户的详细信息与操作  （重点）</h1><span id="more"></span>  <h2 id="用户的配置和修改"><a href="#用户的配置和修改" class="headerlink" title="用户的配置和修改"></a>用户的配置和修改</h2><p>useradd （用户名</p><blockquote><p>&#x2F;&#x2F; 创建一个用户</p></blockquote><p>tail &#x2F;etc&#x2F;passwd</p><blockquote><p>&#x2F;&#x2F; 可以查看用户 </p></blockquote><blockquote><p>例如:gopher:X:13:30:gopher:&#x2F;var&#x2F;gopher&#x2F;:&#x2F;sbin&#x2F;nologin<br>解释:用户名:密码:用户id:用户所在组id:备注:用户家目录:shell命令所在目录。</p></blockquote><blockquote><p>如果想改变uid号和组id号则：<br>usermod -u （新id号） -g （对应组的id号） -c （注释信息） -d （后面加目录） -s（修改的用户的shell） （用户名称  ）</p></blockquote><p>usermod(参数)</p><h3 id="参数"><a href="#参数" class="headerlink" title="参数:"></a>参数:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs Linux">-u <br>//设置用户ID（UID），用户ID和账号一样必须是唯一的。<br>-g         <br>//指定用户所属的主（私有）组（组必须存在），参数可以是组名称或组ID(GID)。<br>-d        <br>//建立用户目录，参数即所建的用户目录（通常与用户账号相同）。<br>-s       <br>//设置用户环境，即设置用户的shell环境。<br>-e      <br>//设置用户账号的使用期限。<br>-G     <br>//用户组，指定用户所属的附加组。 <br>-c  <br>//修改注释信息 <br></code></pre></td></tr></table></figure><p>usermod -l （你要改的用户名） （原来的用户名）</p><blockquote><p>&#x2F;&#x2F;修改用户名</p></blockquote><p>usermod (要删除的用户名)</p><blockquote><p>&#x2F;&#x2F;删除用户名      </p></blockquote><h3 id="密码文件"><a href="#密码文件" class="headerlink" title="密码文件"></a>密码文件</h3><p>tail &#x2F;etc&#x2F;shadow</p><blockquote><p>&#x2F;&#x2F;查看密码文件。</p></blockquote><p>passwd (用户名)</p><blockquote><p>&#x2F;&#x2F;设置密码。</p></blockquote><p>tail &#x2F;etc&#x2F;shadow</p><blockquote><p>&#x2F;查看组密码信息</p></blockquote><blockquote><p>例如:user1:!!:17464:0:99999:7:::  </p><blockquote><p>含义:用户名：密码（无法破解）：最后一次修改时间：密码还有多少天不能更改：密码到期时间：密码到期前的期限：密码失效期限：账号生命周期：保留字&#x2F;etc&#x2F;passwd（用户信息）</p></blockquote></blockquote><h3 id="组的应用和修改"><a href="#组的应用和修改" class="headerlink" title="组的应用和修改"></a>组的应用和修改</h3><p>userdel -r (用户名）</p><blockquote><p>&#x2F;&#x2F;删除用户和目录。</p></blockquote><p>groupadd （组名称）</p><blockquote><p>&#x2F;&#x2F;创建一个用户组 </p></blockquote><p>tail &#x2F;etc&#x2F;group</p><blockquote><p>&#x2F;&#x2F;查看用户组文件</p></blockquote><blockquote><p>例如:ip:X:7:deamon:ip<br>解释:用户组:用户组口令:UID和该用户组包含的用户  </p></blockquote><p>usermod -g （要修改的组）（用户名称）</p><blockquote><p>&#x2F;&#x2F;修改用户的组 </p></blockquote><p>usermod -d  （主目录）（用户名）</p><blockquote><p>&#x2F;&#x2F;修改用户的主目录为…..</p></blockquote><p>passwd -l （用户名）</p><blockquote><p>&#x2F;&#x2F;锁定用户  </p></blockquote><p>passwd -u （用户名）</p><blockquote><p>&#x2F;&#x2F;解锁用户  </p></blockquote><p>gpasswd -d （用户名） （组名）</p><blockquote><p>&#x2F;&#x2F;从组中删除用户 </p></blockquote><p>groupdel （组名）</p><blockquote><p>&#x2F;&#x2F;删除组  </p></blockquote><p>gpasswd (组名称)</p><blockquote><p>&#x2F;&#x2F;给组设置密码  </p></blockquote><p>gpasswd -d （用户名） （组名）    </p><blockquote><p>&#x2F;&#x2F;从组中删除用户 </p></blockquote><p>gpasswd -a  （用户名）</p><blockquote><p>&#x2F;&#x2F;为组增加用户</p></blockquote><h3 id="id的应用"><a href="#id的应用" class="headerlink" title="id的应用"></a>id的应用</h3><p>id (用户名) </p><blockquote><p>&#x2F;&#x2F;查看用户id信息</p></blockquote><p>id-g （用户名）</p><blockquote><p>&#x2F;&#x2F;显示用户所属群组的ID </p></blockquote><p>id-G （用户名）</p><blockquote><p>&#x2F;&#x2F;显示用户所属附加群组的ID</p></blockquote><p>id-u （用户名）</p><blockquote><p>&#x2F;&#x2F;显示用户ID     </p></blockquote>]]></content>
     
     
     <categories>
@@ -1054,11 +1029,36 @@
   
   
   <entry>
-    <title>Tail</title>
-    <link href="/2020/07/19/Linux/tail%20head/"/>
-    <url>/2020/07/19/Linux/tail%20head/</url>
+    <title>Useradd</title>
+    <link href="/2020/07/19/Linux/useradd/"/>
+    <url>/2020/07/19/Linux/useradd/</url>
     
-    <content type="html"><![CDATA[<h1 id="hand的应用"><a href="#hand的应用" class="headerlink" title="hand的应用"></a>hand的应用</h1> <span id="more"></span> <p>head (文件路径)</p><blockquote><p>&#x2F;&#x2F;(查看一个文件的前N行，如果不指定，默认10行)</p></blockquote><p>head -n</p><blockquote><p>&#x2F;&#x2F;n＝你要看的行数+文件路径  </p></blockquote><h1 id="tail的应用"><a href="#tail的应用" class="headerlink" title="tail的应用"></a>tail的应用</h1><p>tail (文件路径)</p><blockquote><p>&#x2F;&#x2F;（查看一个文件的末n行，如果不指定，默认10行）</p></blockquote><p>tail -n</p><blockquote><p>&#x2F;&#x2F; n＝你要看的行数 +文件路径</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="组和用户的详细信息与操作-（重点）"><a href="#组和用户的详细信息与操作-（重点）" class="headerlink" title="组和用户的详细信息与操作  （重点）"></a>组和用户的详细信息与操作  （重点）</h1><span id="more"></span>  <h2 id="用户的配置和修改"><a href="#用户的配置和修改" class="headerlink" title="用户的配置和修改"></a>用户的配置和修改</h2><p>useradd （用户名</p><blockquote><p>&#x2F;&#x2F; 创建一个用户</p></blockquote><p>tail &#x2F;etc&#x2F;passwd</p><blockquote><p>&#x2F;&#x2F; 可以查看用户 </p></blockquote><blockquote><p>例如:gopher:X:13:30:gopher:&#x2F;var&#x2F;gopher&#x2F;:&#x2F;sbin&#x2F;nologin<br>解释:用户名:密码:用户id:用户所在组id:备注:用户家目录:shell命令所在目录。</p></blockquote><blockquote><p>如果想改变uid号和组id号则：<br>usermod -u （新id号） -g （对应组的id号） -c （注释信息） -d （后面加目录） -s（修改的用户的shell） （用户名称  ）</p></blockquote><p>usermod(参数)</p><h3 id="参数"><a href="#参数" class="headerlink" title="参数:"></a>参数:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs Linux">-u <br>//设置用户ID（UID），用户ID和账号一样必须是唯一的。<br>-g         <br>//指定用户所属的主（私有）组（组必须存在），参数可以是组名称或组ID(GID)。<br>-d        <br>//建立用户目录，参数即所建的用户目录（通常与用户账号相同）。<br>-s       <br>//设置用户环境，即设置用户的shell环境。<br>-e      <br>//设置用户账号的使用期限。<br>-G     <br>//用户组，指定用户所属的附加组。 <br>-c  <br>//修改注释信息 <br></code></pre></td></tr></table></figure><p>usermod -l （你要改的用户名） （原来的用户名）</p><blockquote><p>&#x2F;&#x2F;修改用户名</p></blockquote><p>usermod (要删除的用户名)</p><blockquote><p>&#x2F;&#x2F;删除用户名      </p></blockquote><h3 id="密码文件"><a href="#密码文件" class="headerlink" title="密码文件"></a>密码文件</h3><p>tail &#x2F;etc&#x2F;shadow</p><blockquote><p>&#x2F;&#x2F;查看密码文件。</p></blockquote><p>passwd (用户名)</p><blockquote><p>&#x2F;&#x2F;设置密码。</p></blockquote><p>tail &#x2F;etc&#x2F;shadow</p><blockquote><p>&#x2F;查看组密码信息</p></blockquote><blockquote><p>例如:user1:!!:17464:0:99999:7:::  </p><blockquote><p>含义:用户名：密码（无法破解）：最后一次修改时间：密码还有多少天不能更改：密码到期时间：密码到期前的期限：密码失效期限：账号生命周期：保留字&#x2F;etc&#x2F;passwd（用户信息）</p></blockquote></blockquote><h3 id="组的应用和修改"><a href="#组的应用和修改" class="headerlink" title="组的应用和修改"></a>组的应用和修改</h3><p>userdel -r (用户名）</p><blockquote><p>&#x2F;&#x2F;删除用户和目录。</p></blockquote><p>groupadd （组名称）</p><blockquote><p>&#x2F;&#x2F;创建一个用户组 </p></blockquote><p>tail &#x2F;etc&#x2F;group</p><blockquote><p>&#x2F;&#x2F;查看用户组文件</p></blockquote><blockquote><p>例如:ip:X:7:deamon:ip<br>解释:用户组:用户组口令:UID和该用户组包含的用户  </p></blockquote><p>usermod -g （要修改的组）（用户名称）</p><blockquote><p>&#x2F;&#x2F;修改用户的组 </p></blockquote><p>usermod -d  （主目录）（用户名）</p><blockquote><p>&#x2F;&#x2F;修改用户的主目录为…..</p></blockquote><p>passwd -l （用户名）</p><blockquote><p>&#x2F;&#x2F;锁定用户  </p></blockquote><p>passwd -u （用户名）</p><blockquote><p>&#x2F;&#x2F;解锁用户  </p></blockquote><p>gpasswd -d （用户名） （组名）</p><blockquote><p>&#x2F;&#x2F;从组中删除用户 </p></blockquote><p>groupdel （组名）</p><blockquote><p>&#x2F;&#x2F;删除组  </p></blockquote><p>gpasswd (组名称)</p><blockquote><p>&#x2F;&#x2F;给组设置密码  </p></blockquote><p>gpasswd -d （用户名） （组名）    </p><blockquote><p>&#x2F;&#x2F;从组中删除用户 </p></blockquote><p>gpasswd -a  （用户名）</p><blockquote><p>&#x2F;&#x2F;为组增加用户</p></blockquote><h3 id="id的应用"><a href="#id的应用" class="headerlink" title="id的应用"></a>id的应用</h3><p>id (用户名) </p><blockquote><p>&#x2F;&#x2F;查看用户id信息</p></blockquote><p>id-g （用户名）</p><blockquote><p>&#x2F;&#x2F;显示用户所属群组的ID </p></blockquote><p>id-G （用户名）</p><blockquote><p>&#x2F;&#x2F;显示用户所属附加群组的ID</p></blockquote><p>id-u （用户名）</p><blockquote><p>&#x2F;&#x2F;显示用户ID     </p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Wc</title>
+    <link href="/2020/07/19/Linux/wc/"/>
+    <url>/2020/07/19/Linux/wc/</url>
+    
+    <content type="html"><![CDATA[<h1 id="wc的应用（扩充）"><a href="#wc的应用（扩充）" class="headerlink" title="wc的应用（扩充）"></a>wc的应用（扩充）</h1><span id="more"></span>  <p>wc   (文件目录)       </p><blockquote><p>&#x2F;&#x2F;（统计文件内容信息（包含行数、单词数、字节数））</p></blockquote><p>wc-l</p><blockquote><p>&#x2F;&#x2F;（行数）</p></blockquote><p>wc-w</p><blockquote><p>&#x2F;&#x2F;（单词数）</p></blockquote><p>wc-c</p><blockquote><p>&#x2F;&#x2F;（字节数）    </p></blockquote>]]></content>
     
     
     <categories>
