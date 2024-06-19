@@ -304,11 +304,11 @@
   
   
   <entry>
-    <title>2.顺序控制</title>
-    <link href="/2022/09/05/java/2.%E9%A1%BA%E5%BA%8F%E6%8E%A7%E5%88%B6/"/>
-    <url>/2022/09/05/java/2.%E9%A1%BA%E5%BA%8F%E6%8E%A7%E5%88%B6/</url>
+    <title>3.数组</title>
+    <link href="/2022/09/05/java/3.%E6%95%B0%E7%BB%84/"/>
+    <url>/2022/09/05/java/3.%E6%95%B0%E7%BB%84/</url>
     
-    <content type="html"><![CDATA[<h1 id="1-顺序控制"><a href="#1-顺序控制" class="headerlink" title="1.顺序控制"></a>1.顺序控制</h1><span id="more"></span><p>定义:程序从上到下逐行地执行，中间没有任何判断和跳转。</p><h1 id="2-分支控制if-else"><a href="#2-分支控制if-else" class="headerlink" title="2.分支控制if-else"></a>2.分支控制if-else</h1><h2 id="2-1单分支"><a href="#2-1单分支" class="headerlink" title="2.1单分支"></a>2.1单分支</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(条件表达式)&#123;<br>    执行代码块<span class="hljs-number">1</span>；<br>    执行代码块<span class="hljs-number">2</span>；<br>    ……<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-2双分支"><a href="#2-2双分支" class="headerlink" title="2.2双分支"></a>2.2双分支</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(条件表达式)&#123;<br>    执行代码块<span class="hljs-number">1</span>；<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>    执行代码块<span class="hljs-number">2</span>；<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-3多分支"><a href="#2-3多分支" class="headerlink" title="2.3多分支"></a>2.3多分支</h2><p>基本语法：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(条件表达式<span class="hljs-number">1</span>)&#123;<br>    执行代码块<span class="hljs-number">1</span>；<br>&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(条件表达式<span class="hljs-number">2</span>)&#123;<br>    执行代码块<span class="hljs-number">2</span>；<br>&#125;<br>……<br><span class="hljs-keyword">else</span>&#123;<br>    执行代码块n；<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-4嵌套分支"><a href="#2-4嵌套分支" class="headerlink" title="2.4嵌套分支"></a>2.4嵌套分支</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span>()&#123;<br>    <span class="hljs-keyword">if</span>()&#123;<br>        <br>    &#125;<span class="hljs-keyword">else</span>&#123;<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-5switch分支结构"><a href="#2-5switch分支结构" class="headerlink" title="2.5switch分支结构"></a>2.5switch分支结构</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">switch</span>(表达式)&#123;<br>    <span class="hljs-keyword">case</span> 常量<span class="hljs-number">1</span>：<br>    语句块<span class="hljs-number">1</span>；<br>    <span class="hljs-keyword">case</span> 常量<span class="hljs-number">2</span>：<br>    语句块<span class="hljs-number">2</span>；<br>    <span class="hljs-keyword">break</span>；<span class="hljs-comment">//中途退出</span><br>    <span class="hljs-keyword">case</span> n：<br>    语句块n；<br>    <span class="hljs-keyword">default</span>：<span class="hljs-comment">//类似于else</span><br>    <span class="hljs-keyword">default</span>语句块；<br>    <span class="hljs-keyword">break</span>；<br>&#125;<br></code></pre></td></tr></table></figure><p>switch穿透:即如果case符合了一个条件，但是此条件下没有break语句，那么它会继续执行下面的语句块2，并不会进行条件的判定。以此类推，直到遇到break。<br>注意:<br>1.表达式数据类型，应和case后的常量类型一致，或者是可以自动转成可以相互比较的类型，比如输入的是字符，而常量是int。<br>2.语句中的default语句是可选的。</p><h2 id="2-6for循环控制"><a href="#2-6for循环控制" class="headerlink" title="2.6for循环控制"></a>2.6for循环控制</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span>(循环变量初始化；循环条件；循环变量迭代)&#123;<br>    循环语句；<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-7while循环控制"><a href="#2-7while循环控制" class="headerlink" title="2.7while循环控制"></a>2.7while循环控制</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">while</span>(循环条件)&#123;<br>    循环体；<br>    循环变量迭代；<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-8do-while循环控制"><a href="#2-8do-while循环控制" class="headerlink" title="2.8do..while循环控制"></a>2.8do..while循环控制</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">循环变量初始化；<br><span class="hljs-keyword">do</span>&#123;<br>    循环体;<br>    循环变量迭代；<br>&#125;<span class="hljs-keyword">while</span>(循环条件)；<br></code></pre></td></tr></table></figure><h2 id="2-9多重-嵌套-循环控制"><a href="#2-9多重-嵌套-循环控制" class="headerlink" title="2.9多重(嵌套)循环控制"></a>2.9多重(嵌套)循环控制</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span>()&#123;<br>    <span class="hljs-keyword">for</span>()&#123;<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="案例，输出99乘法表"><a href="#案例，输出99乘法表" class="headerlink" title="案例，输出99乘法表"></a>案例，输出99乘法表</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">day9_6_jzt</span> &#123;<br><span class="hljs-comment">//编写99乘法表</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String []args)</span> &#123;<br><span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;i &lt;= <span class="hljs-number">9</span>;i++) &#123;<br>System.out.println(<span class="hljs-string">&quot; &quot;</span>);<br>sum = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;j &lt;= i;j++) &#123;<br> sum = j*i;<br>System.out.print(j+<span class="hljs-string">&quot;*&quot;</span>+i+<span class="hljs-string">&quot;=&quot;</span>+sum);<br>System.out.print(<span class="hljs-string">&quot;\t&quot;</span>);<br>&#125;<br>&#125;<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-10跳转控制语句-break"><a href="#2-10跳转控制语句-break" class="headerlink" title="2.10跳转控制语句-break"></a>2.10跳转控制语句-break</h2><p>基本语法:break；<br>功能:当循环满足了某个条件后，可以终止循环。</p><h2 id="2-11跳转控制语句-continue"><a href="#2-11跳转控制语句-continue" class="headerlink" title="2.11跳转控制语句-continue"></a>2.11跳转控制语句-continue</h2><p>基本语法:continue；<br>功能:用于结束本次循环，继续执行下一次循环。</p><h2 id="2-12跳转控制语句-return"><a href="#2-12跳转控制语句-return" class="headerlink" title="2.12跳转控制语句-return"></a>2.12跳转控制语句-return</h2><p>功能:return使用在方法上，表示跳出当前所在的方法。如果return写在main方法，则会退出程序。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="1-数组"><a href="#1-数组" class="headerlink" title="1.数组"></a>1.数组</h1><span id="more"></span><p>数组的定义方式:</p><blockquote><p>1.double [ ] x &#x3D; {……};<br>&#x2F;&#x2F;数据类型[ ] 数组名<br>2.动态初始化方式:<br>语法:数据类型 数组名[ ] &#x3D; new 数组类型[大小]<br>int a [ ] &#x3D; new int[5];<br>先声明数组:<br>语法:数据类型 数组名[ ]<br>int a [ ];<br>创建数组:<br>语法:数组名 &#x3D; new 数据类型[大小]；<br>a &#x3D; new int [5];<br>3.静态初始化<br>语法:数据类型 数组名[ ] &#x3D; {元素值……}<br>int a [ ] &#x3D; {1,2,3,4,5};</p></blockquote><h2 id="2-选择排序法"><a href="#2-选择排序法" class="headerlink" title="2.选择排序法"></a>2.选择排序法</h2><p>描述:冒泡排序法是有一个符合条件的就进行交换，而选择排序法是从头比到尾在进行交换</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-keyword">import</span> java.util.Arrays；<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">day9_8_1</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[]args)</span>&#123;<br>        <span class="hljs-type">int</span> arr[] = &#123;<span class="hljs-number">24</span>,<span class="hljs-number">69</span>,<span class="hljs-number">80</span>,<span class="hljs-number">57</span>,<span class="hljs-number">13</span>&#125;;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;i &lt; arr.length-<span class="hljs-number">1</span>;i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i+<span class="hljs-number">1</span>;j &lt; arr.length;j++)&#123;<br>                <span class="hljs-keyword">if</span>(arr[i]&gt;arr[j])&#123;     <span class="hljs-comment">//从小到大排序</span><br>                    temp = arr[j];<br>                    arr[j] = arr[i];<br>                    arr[i] = temp;<br>                &#125;<br>            &#125;<br>        &#125;<br>        System.out.println(Arrays.toString(arr));<span class="hljs-comment">//遍历数组</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="3-冒泡排序法"><a href="#3-冒泡排序法" class="headerlink" title="3.冒泡排序法"></a>3.冒泡排序法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-keyword">import</span> java.util.Arrays;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">day9_8_2</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[]args)</span>&#123;<br>        <span class="hljs-type">int</span> arr [] = &#123;<span class="hljs-number">24</span>,<span class="hljs-number">69</span>,<span class="hljs-number">80</span>,<span class="hljs-number">57</span>,<span class="hljs-number">13</span>&#125;;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;i &lt; arr.length-<span class="hljs-number">1</span>;i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;j &lt; arr.length-<span class="hljs-number">1</span>-i;j++)&#123;<br>                <span class="hljs-keyword">if</span>(arr[j]&gt;arr[j+<span class="hljs-number">1</span>])&#123;<br>                    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> arr[j];<br>                    arr[j] = arr[j+<span class="hljs-number">1</span>];<br>                    arr[j+<span class="hljs-number">1</span>] = temp;<br>                &#125;<br>            &#125;<br>        &#125;<br>        System.out.println(Arrays.toString(arr));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="4-查找数组"><a href="#4-查找数组" class="headerlink" title="4.查找数组"></a>4.查找数组</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">day_9_9_1</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[]args)</span>&#123;<br>        Strint arr [] = &#123;<span class="hljs-string">&quot;耗子&quot;</span>,<span class="hljs-string">&quot;旭子&quot;</span>,<span class="hljs-string">&quot;强子&quot;</span>,<span class="hljs-string">&quot;宇子&quot;</span>&#125;;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        System.out.println(<span class="hljs-string">&quot;请输入要查找的字符串&quot;</span>);<br>        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> sc.next();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<span class="hljs-comment">//判断是否查找成功</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;i &lt;=arr.length;i++)&#123;<br>            <span class="hljs-keyword">if</span>(name.equals(arr[i]))&#123;   <span class="hljs-comment">//equals用来比较字符串内容，这里用来判断name和arr[i]的字符串是否相等。</span><br>                System.out.println(<span class="hljs-string">&quot;恭喜你找到了&quot;</span>+name+<span class="hljs-string">&quot;它的下标为&quot;</span>+i);<br>                index = i;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(index = -<span class="hljs-number">1</span>)&#123;<br>            System.out.println(<span class="hljs-string">&quot;Sorry,并没有找到&quot;</span>+name);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="5-二维数组"><a href="#5-二维数组" class="headerlink" title="5.二维数组"></a>5.二维数组</h2><p>5.1二维数组的定义方式(静态初始化):</p><blockquote><p>int arr [ ] [ ] &#x3D;{ {……} };</p></blockquote><p>例如:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-type">int</span> arr [ ] [ ] = &#123;&#123;<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>&#125;,<br>                   &#123;<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">1</span>&#125;,<br>                   &#123;<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>&#125;&#125;;<br></code></pre></td></tr></table></figure><p>可以理解为:每一对{ }都是一个一维数组，多个一维数组构成二维数组。<br>如何访问二维数组中的某个元素:<br>例:我们要寻找arr数组中的4，则表达式为arr[1][3];<br>二维数组的动态初始化方式:</p><blockquote><p>语法:类型 数组名[ ][ ] &#x3D; new 类型[大小][大小];<br>例如:int arr [ ] [ ] &#x3D; new int[2][3];<br>&#x2F;&#x2F;这样就定义了一个二行三列的数组。<br>也可以写成int arr;&#x2F;&#x2F;先声明，arr &#x3D; new int [2][3];&#x2F;&#x2F;再开辟空间。</p></blockquote><p>5.2遍历一个二维数组</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;i &lt; arr.length;i++)&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;j &lt; arr[i].length;j++)&#123;<br>        System.out.print(a[i][j]+<span class="hljs-string">&quot;&quot;</span>);<br>    &#125;<br>    System.out.println( );<span class="hljs-comment">//换行</span><br>&#125;<br></code></pre></td></tr></table></figure><p>5.3让两个二维数组的长度相等</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-type">int</span> [] [] arr1 = &#123;&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;&#125;;<br><span class="hljs-type">int</span> [] [] arr2 = &#123;&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;&#125;;<br><span class="hljs-type">int</span> [] [] arr3 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span> [arr1.length][arr1.length];<br><span class="hljs-type">int</span> [] [] arr4 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span> [arr2.length][arr2.length];<br><span class="hljs-comment">//arr3,arr4的值为空，但是有长度,和arr1,arr2的长度相等</span><br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -329,11 +329,11 @@
   
   
   <entry>
-    <title>3.数组</title>
-    <link href="/2022/09/05/java/3.%E6%95%B0%E7%BB%84/"/>
-    <url>/2022/09/05/java/3.%E6%95%B0%E7%BB%84/</url>
+    <title>2.顺序控制</title>
+    <link href="/2022/09/05/java/2.%E9%A1%BA%E5%BA%8F%E6%8E%A7%E5%88%B6/"/>
+    <url>/2022/09/05/java/2.%E9%A1%BA%E5%BA%8F%E6%8E%A7%E5%88%B6/</url>
     
-    <content type="html"><![CDATA[<h1 id="1-数组"><a href="#1-数组" class="headerlink" title="1.数组"></a>1.数组</h1><span id="more"></span><p>数组的定义方式:</p><blockquote><p>1.double [ ] x &#x3D; {……};<br>&#x2F;&#x2F;数据类型[ ] 数组名<br>2.动态初始化方式:<br>语法:数据类型 数组名[ ] &#x3D; new 数组类型[大小]<br>int a [ ] &#x3D; new int[5];<br>先声明数组:<br>语法:数据类型 数组名[ ]<br>int a [ ];<br>创建数组:<br>语法:数组名 &#x3D; new 数据类型[大小]；<br>a &#x3D; new int [5];<br>3.静态初始化<br>语法:数据类型 数组名[ ] &#x3D; {元素值……}<br>int a [ ] &#x3D; {1,2,3,4,5};</p></blockquote><h2 id="2-选择排序法"><a href="#2-选择排序法" class="headerlink" title="2.选择排序法"></a>2.选择排序法</h2><p>描述:冒泡排序法是有一个符合条件的就进行交换，而选择排序法是从头比到尾在进行交换</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-keyword">import</span> java.util.Arrays；<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">day9_8_1</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[]args)</span>&#123;<br>        <span class="hljs-type">int</span> arr[] = &#123;<span class="hljs-number">24</span>,<span class="hljs-number">69</span>,<span class="hljs-number">80</span>,<span class="hljs-number">57</span>,<span class="hljs-number">13</span>&#125;;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;i &lt; arr.length-<span class="hljs-number">1</span>;i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i+<span class="hljs-number">1</span>;j &lt; arr.length;j++)&#123;<br>                <span class="hljs-keyword">if</span>(arr[i]&gt;arr[j])&#123;     <span class="hljs-comment">//从小到大排序</span><br>                    temp = arr[j];<br>                    arr[j] = arr[i];<br>                    arr[i] = temp;<br>                &#125;<br>            &#125;<br>        &#125;<br>        System.out.println(Arrays.toString(arr));<span class="hljs-comment">//遍历数组</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="3-冒泡排序法"><a href="#3-冒泡排序法" class="headerlink" title="3.冒泡排序法"></a>3.冒泡排序法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-keyword">import</span> java.util.Arrays;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">day9_8_2</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[]args)</span>&#123;<br>        <span class="hljs-type">int</span> arr [] = &#123;<span class="hljs-number">24</span>,<span class="hljs-number">69</span>,<span class="hljs-number">80</span>,<span class="hljs-number">57</span>,<span class="hljs-number">13</span>&#125;;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;i &lt; arr.length-<span class="hljs-number">1</span>;i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;j &lt; arr.length-<span class="hljs-number">1</span>-i;j++)&#123;<br>                <span class="hljs-keyword">if</span>(arr[j]&gt;arr[j+<span class="hljs-number">1</span>])&#123;<br>                    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> arr[j];<br>                    arr[j] = arr[j+<span class="hljs-number">1</span>];<br>                    arr[j+<span class="hljs-number">1</span>] = temp;<br>                &#125;<br>            &#125;<br>        &#125;<br>        System.out.println(Arrays.toString(arr));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="4-查找数组"><a href="#4-查找数组" class="headerlink" title="4.查找数组"></a>4.查找数组</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">day_9_9_1</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[]args)</span>&#123;<br>        Strint arr [] = &#123;<span class="hljs-string">&quot;耗子&quot;</span>,<span class="hljs-string">&quot;旭子&quot;</span>,<span class="hljs-string">&quot;强子&quot;</span>,<span class="hljs-string">&quot;宇子&quot;</span>&#125;;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        System.out.println(<span class="hljs-string">&quot;请输入要查找的字符串&quot;</span>);<br>        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> sc.next();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<span class="hljs-comment">//判断是否查找成功</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;i &lt;=arr.length;i++)&#123;<br>            <span class="hljs-keyword">if</span>(name.equals(arr[i]))&#123;   <span class="hljs-comment">//equals用来比较字符串内容，这里用来判断name和arr[i]的字符串是否相等。</span><br>                System.out.println(<span class="hljs-string">&quot;恭喜你找到了&quot;</span>+name+<span class="hljs-string">&quot;它的下标为&quot;</span>+i);<br>                index = i;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(index = -<span class="hljs-number">1</span>)&#123;<br>            System.out.println(<span class="hljs-string">&quot;Sorry,并没有找到&quot;</span>+name);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="5-二维数组"><a href="#5-二维数组" class="headerlink" title="5.二维数组"></a>5.二维数组</h2><p>5.1二维数组的定义方式(静态初始化):</p><blockquote><p>int arr [ ] [ ] &#x3D;{ {……} };</p></blockquote><p>例如:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-type">int</span> arr [ ] [ ] = &#123;&#123;<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>&#125;,<br>                   &#123;<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">1</span>&#125;,<br>                   &#123;<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>&#125;&#125;;<br></code></pre></td></tr></table></figure><p>可以理解为:每一对{ }都是一个一维数组，多个一维数组构成二维数组。<br>如何访问二维数组中的某个元素:<br>例:我们要寻找arr数组中的4，则表达式为arr[1][3];<br>二维数组的动态初始化方式:</p><blockquote><p>语法:类型 数组名[ ][ ] &#x3D; new 类型[大小][大小];<br>例如:int arr [ ] [ ] &#x3D; new int[2][3];<br>&#x2F;&#x2F;这样就定义了一个二行三列的数组。<br>也可以写成int arr;&#x2F;&#x2F;先声明，arr &#x3D; new int [2][3];&#x2F;&#x2F;再开辟空间。</p></blockquote><p>5.2遍历一个二维数组</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;i &lt; arr.length;i++)&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;j &lt; arr[i].length;j++)&#123;<br>        System.out.print(a[i][j]+<span class="hljs-string">&quot;&quot;</span>);<br>    &#125;<br>    System.out.println( );<span class="hljs-comment">//换行</span><br>&#125;<br></code></pre></td></tr></table></figure><p>5.3让两个二维数组的长度相等</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-type">int</span> [] [] arr1 = &#123;&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;&#125;;<br><span class="hljs-type">int</span> [] [] arr2 = &#123;&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;&#125;;<br><span class="hljs-type">int</span> [] [] arr3 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span> [arr1.length][arr1.length];<br><span class="hljs-type">int</span> [] [] arr4 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span> [arr2.length][arr2.length];<br><span class="hljs-comment">//arr3,arr4的值为空，但是有长度,和arr1,arr2的长度相等</span><br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="1-顺序控制"><a href="#1-顺序控制" class="headerlink" title="1.顺序控制"></a>1.顺序控制</h1><span id="more"></span><p>定义:程序从上到下逐行地执行，中间没有任何判断和跳转。</p><h1 id="2-分支控制if-else"><a href="#2-分支控制if-else" class="headerlink" title="2.分支控制if-else"></a>2.分支控制if-else</h1><h2 id="2-1单分支"><a href="#2-1单分支" class="headerlink" title="2.1单分支"></a>2.1单分支</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(条件表达式)&#123;<br>    执行代码块<span class="hljs-number">1</span>；<br>    执行代码块<span class="hljs-number">2</span>；<br>    ……<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-2双分支"><a href="#2-2双分支" class="headerlink" title="2.2双分支"></a>2.2双分支</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(条件表达式)&#123;<br>    执行代码块<span class="hljs-number">1</span>；<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>    执行代码块<span class="hljs-number">2</span>；<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-3多分支"><a href="#2-3多分支" class="headerlink" title="2.3多分支"></a>2.3多分支</h2><p>基本语法：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(条件表达式<span class="hljs-number">1</span>)&#123;<br>    执行代码块<span class="hljs-number">1</span>；<br>&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(条件表达式<span class="hljs-number">2</span>)&#123;<br>    执行代码块<span class="hljs-number">2</span>；<br>&#125;<br>……<br><span class="hljs-keyword">else</span>&#123;<br>    执行代码块n；<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-4嵌套分支"><a href="#2-4嵌套分支" class="headerlink" title="2.4嵌套分支"></a>2.4嵌套分支</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span>()&#123;<br>    <span class="hljs-keyword">if</span>()&#123;<br>        <br>    &#125;<span class="hljs-keyword">else</span>&#123;<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-5switch分支结构"><a href="#2-5switch分支结构" class="headerlink" title="2.5switch分支结构"></a>2.5switch分支结构</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">switch</span>(表达式)&#123;<br>    <span class="hljs-keyword">case</span> 常量<span class="hljs-number">1</span>：<br>    语句块<span class="hljs-number">1</span>；<br>    <span class="hljs-keyword">case</span> 常量<span class="hljs-number">2</span>：<br>    语句块<span class="hljs-number">2</span>；<br>    <span class="hljs-keyword">break</span>；<span class="hljs-comment">//中途退出</span><br>    <span class="hljs-keyword">case</span> n：<br>    语句块n；<br>    <span class="hljs-keyword">default</span>：<span class="hljs-comment">//类似于else</span><br>    <span class="hljs-keyword">default</span>语句块；<br>    <span class="hljs-keyword">break</span>；<br>&#125;<br></code></pre></td></tr></table></figure><p>switch穿透:即如果case符合了一个条件，但是此条件下没有break语句，那么它会继续执行下面的语句块2，并不会进行条件的判定。以此类推，直到遇到break。<br>注意:<br>1.表达式数据类型，应和case后的常量类型一致，或者是可以自动转成可以相互比较的类型，比如输入的是字符，而常量是int。<br>2.语句中的default语句是可选的。</p><h2 id="2-6for循环控制"><a href="#2-6for循环控制" class="headerlink" title="2.6for循环控制"></a>2.6for循环控制</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span>(循环变量初始化；循环条件；循环变量迭代)&#123;<br>    循环语句；<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-7while循环控制"><a href="#2-7while循环控制" class="headerlink" title="2.7while循环控制"></a>2.7while循环控制</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">while</span>(循环条件)&#123;<br>    循环体；<br>    循环变量迭代；<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-8do-while循环控制"><a href="#2-8do-while循环控制" class="headerlink" title="2.8do..while循环控制"></a>2.8do..while循环控制</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">循环变量初始化；<br><span class="hljs-keyword">do</span>&#123;<br>    循环体;<br>    循环变量迭代；<br>&#125;<span class="hljs-keyword">while</span>(循环条件)；<br></code></pre></td></tr></table></figure><h2 id="2-9多重-嵌套-循环控制"><a href="#2-9多重-嵌套-循环控制" class="headerlink" title="2.9多重(嵌套)循环控制"></a>2.9多重(嵌套)循环控制</h2><p>基本语法:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span>()&#123;<br>    <span class="hljs-keyword">for</span>()&#123;<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="案例，输出99乘法表"><a href="#案例，输出99乘法表" class="headerlink" title="案例，输出99乘法表"></a>案例，输出99乘法表</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">day9_6_jzt</span> &#123;<br><span class="hljs-comment">//编写99乘法表</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String []args)</span> &#123;<br><span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;i &lt;= <span class="hljs-number">9</span>;i++) &#123;<br>System.out.println(<span class="hljs-string">&quot; &quot;</span>);<br>sum = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;j &lt;= i;j++) &#123;<br> sum = j*i;<br>System.out.print(j+<span class="hljs-string">&quot;*&quot;</span>+i+<span class="hljs-string">&quot;=&quot;</span>+sum);<br>System.out.print(<span class="hljs-string">&quot;\t&quot;</span>);<br>&#125;<br>&#125;<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-10跳转控制语句-break"><a href="#2-10跳转控制语句-break" class="headerlink" title="2.10跳转控制语句-break"></a>2.10跳转控制语句-break</h2><p>基本语法:break；<br>功能:当循环满足了某个条件后，可以终止循环。</p><h2 id="2-11跳转控制语句-continue"><a href="#2-11跳转控制语句-continue" class="headerlink" title="2.11跳转控制语句-continue"></a>2.11跳转控制语句-continue</h2><p>基本语法:continue；<br>功能:用于结束本次循环，继续执行下一次循环。</p><h2 id="2-12跳转控制语句-return"><a href="#2-12跳转控制语句-return" class="headerlink" title="2.12跳转控制语句-return"></a>2.12跳转控制语句-return</h2><p>功能:return使用在方法上，表示跳出当前所在的方法。如果return写在main方法，则会退出程序。</p>]]></content>
     
     
     <categories>
@@ -404,31 +404,6 @@
   
   
   <entry>
-    <title>MySQL入门第二篇</title>
-    <link href="/2020/07/19/MySQL(2)/"/>
-    <url>/2020/07/19/MySQL(2)/</url>
-    
-    <content type="html"><![CDATA[<h1 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h1><span id="more"></span><p>insert into &lt;表名&gt; values (在表中插入的数据);   </p><blockquote><p>&#x2F;&#x2F;在表中插入数据，方法有很多种，这里只写一种，注意，在表里插入的数据要对应你建表的格式。</p></blockquote><p>例如: </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs MySQL">insert into xs (&#x27;201901&#x27;,&#x27;张三&#x27;, &#x27;计算机&#x27;,1,&#x27;2000-01-02&#x27;,58);  <br>//此条数据对应上一篇文章的表，字符型数据添加时必须带单引号，然后两条数据之间用逗号隔开，注意，MySQL只能识别英文标点。  <br></code></pre></td></tr></table></figure><p>delete from &lt;表名&gt; where &lt;条件&gt;;</p><blockquote><p>&#x2F;&#x2F;删除表中记录</p></blockquote><p>update &lt;表明&gt; set 字段名&#x3D;’值’ where &lt;条件&gt;;</p><blockquote><p>&#x2F;&#x2F;修改表中记录</p></blockquote><p>select * from &lt;表名&gt;;</p><blockquote><p>&#x2F;&#x2F;查询表中记录</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>MySQL</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>MySQL</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>MySQL入门第一篇</title>
     <link href="/2020/07/19/MySQL(1)/"/>
     <url>/2020/07/19/MySQL(1)/</url>
@@ -454,11 +429,36 @@
   
   
   <entry>
-    <title>dns服务</title>
-    <link href="/2020/07/19/Linux/DNS/"/>
-    <url>/2020/07/19/Linux/DNS/</url>
+    <title>MySQL入门第二篇</title>
+    <link href="/2020/07/19/MySQL(2)/"/>
+    <url>/2020/07/19/MySQL(2)/</url>
     
-    <content type="html"><![CDATA[<h1 id="Linux的网络服务之一"><a href="#Linux的网络服务之一" class="headerlink" title="Linux的网络服务之一"></a>Linux的网络服务之一</h1><h2 id="DNS服务器"><a href="#DNS服务器" class="headerlink" title="DNS服务器"></a>DNS服务器</h2><span id="more"></span><p>rpm -q bind</p><blockquote><p>&#x2F;&#x2F;检查DNS是否安装  </p></blockquote><p>yum install -y bind</p><blockquote><p>&#x2F;&#x2F;安装DNS服务</p></blockquote><p>service  firewalld  stop</p><blockquote><p>&#x2F;&#x2F;关闭防火墙</p></blockquote><p>setenforce  0</p><blockquote><p>&#x2F;&#x2F;关闭安全策略</p></blockquote><p>vi &#x2F;etc&#x2F;named.conf</p><blockquote><p>&#x2F;&#x2F;配置文件位置</p></blockquote><h2 id="配置文件更多信息"><a href="#配置文件更多信息" class="headerlink" title="配置文件更多信息"></a>配置文件更多信息</h2><p>DNS的配置文件分为:主配置文件，全局配置文件,区域配置文件,正向配置文件，反向配置文件.</p><h2 id="在主配置文件中"><a href="#在主配置文件中" class="headerlink" title="在主配置文件中"></a>在主配置文件中</h2><p>listen-on port 53 { 127.0.0.1; }; </p><blockquote><p>&#x2F;&#x2F;指定dns服务的端口和ip，dns默认监听端口为53，any代表主机的任何ip(ipv4)</p></blockquote><p>listen-on-v6 port 53 { ::1; };</p><blockquote><p>&#x2F;&#x2F;ipv6的配置</p></blockquote><p>directory       “&#x2F;var&#x2F;named”;</p><blockquote><p>&#x2F;&#x2F;程序的主目录</p></blockquote><p>allow-query     { localhost; };</p><blockquote><p>&#x2F;&#x2F;指定可以查询的客户端，any代表任意客户端,把127.0.0.1和localhost改成any即可。</p></blockquote><p>include “&#x2F;etc&#x2F;named.rfc1912.zones”;</p><blockquote><p>&#x2F;&#x2F;区域配置文件的位置</p></blockquote><p>vi &#x2F;etc&#x2F;named.rfc1912.zones</p><blockquote><p>&#x2F;&#x2F;进入解析配置文件</p></blockquote><h2 id="在解析配置文件中"><a href="#在解析配置文件中" class="headerlink" title="在解析配置文件中"></a>在解析配置文件中</h2><p>配置解析配置文件(正向)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Linux">zone &quot;myweb.com&quot; IN &#123;<br>        type master; <br>        file &quot;myweb.com.zheng&quot;;  <br>        allow-update &#123; none; &#125;; <br>&#125;;<br></code></pre></td></tr></table></figure><p>配置解析配置文件(反向)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Linux">zone &quot;159.168.192.in-addr.arpa&quot; IN &#123; <br>        type master;  <br>        file &quot;192.168.159.fan&quot;;  <br>        allow-update &#123; none; &#125;; <br>&#125;;  <br></code></pre></td></tr></table></figure><h2 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h2><ol><li>文中的myweb.com是你的域名地址</li><li>file “myweb.com.zheng”;是此域名的正向解析地址，其中引号里的语句可以自定义更改</li><li>文中的zone “159.168.192.in-addr.arpa” IN {是反向地址解析，语句159.168.192是你虚拟机或者服务器的ip地址的反向ip</li><li>file “192.168.159.fan”;是填写反向地址解析的配置文件，192.168.159.fan语句可以自定义</li></ol><h2 id="配置正向地址解析文件"><a href="#配置正向地址解析文件" class="headerlink" title="配置正向地址解析文件"></a>配置正向地址解析文件</h2><p>cp -a named.localhost myweb.com.zheng</p><blockquote><p>named.localhost为正向解析的模板，复制后的文件名字必须是你配置解析文件中file “myweb.com.zheng”;里的名字。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs Linux">$TTL 1D<br>@       IN SOA  abc.com. rname.invalid. (<br>                                        0       ; serial<br>                                        1D      ; refresh<br>                                        1H      ; retry<br>                                        1W      ; expire<br>                                        3H )    ; minimum<br>        NS      dns.abc.com.<br>        A       127.0.0.1<br>        AAAA    ::1<br>dns     A       192.168.100.128<br>www     A       192.168.100.129<br></code></pre></td></tr></table></figure><ol><li>abc.com.是你域名的地址</li><li>dns是主机名，192.168.100.128是对应的ip地址</li><li>www是主机名，192.168.100.129是对应的ip地址</li></ol><p>cp -a named.loopback 192.168.159.fan</p><blockquote><p>#named.loopback为反向解析的模板</p></blockquote><h2 id="配置反向地址解析文件"><a href="#配置反向地址解析文件" class="headerlink" title="配置反向地址解析文件"></a>配置反向地址解析文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Linux">$TTL 1D<br>@       IN SOA  abc.com. rname.invalid. (<br>                                        0       ; serial<br>                                        1D      ; refresh<br>                                        1H      ; retry<br>                                        1W      ; expire<br>                                        3H )    ; minimum<br>        NS      dns.abc.com.<br>        A       127.0.0.1<br>        AAAA    ::1<br>        PTR     localhost.<br>128     PTR     dns.abc.com<br>129     PTR     www.abc.com<br></code></pre></td></tr></table></figure><ol><li>abc.com.是你域名的地址</li><li>128是dns.abc.com的映射</li><li>129是<a href="http://www.abc.com的映射/">www.abc.com的映射</a></li><li>dns.abc.com的正&#x2F;反解析ip必须是网卡的dns</li><li>使用nslookup 命令，就可以查看解析</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h1><span id="more"></span><p>insert into &lt;表名&gt; values (在表中插入的数据);   </p><blockquote><p>&#x2F;&#x2F;在表中插入数据，方法有很多种，这里只写一种，注意，在表里插入的数据要对应你建表的格式。</p></blockquote><p>例如: </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs MySQL">insert into xs (&#x27;201901&#x27;,&#x27;张三&#x27;, &#x27;计算机&#x27;,1,&#x27;2000-01-02&#x27;,58);  <br>//此条数据对应上一篇文章的表，字符型数据添加时必须带单引号，然后两条数据之间用逗号隔开，注意，MySQL只能识别英文标点。  <br></code></pre></td></tr></table></figure><p>delete from &lt;表名&gt; where &lt;条件&gt;;</p><blockquote><p>&#x2F;&#x2F;删除表中记录</p></blockquote><p>update &lt;表明&gt; set 字段名&#x3D;’值’ where &lt;条件&gt;;</p><blockquote><p>&#x2F;&#x2F;修改表中记录</p></blockquote><p>select * from &lt;表名&gt;;</p><blockquote><p>&#x2F;&#x2F;查询表中记录</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>MySQL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MySQL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>DHCP服务</title>
+    <link href="/2020/07/19/Linux/DHCP/"/>
+    <url>/2020/07/19/Linux/DHCP/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Linux的网络服务之一"><a href="#Linux的网络服务之一" class="headerlink" title="Linux的网络服务之一"></a>Linux的网络服务之一</h1><span id="more"></span><h2 id="dhcp服务"><a href="#dhcp服务" class="headerlink" title="dhcp服务"></a>dhcp服务</h2><p>rpm -q dhcp</p><blockquote><p>&#x2F;&#x2F;检查是否安装dhcp服务  </p></blockquote><p>yum install -y dhcp</p><blockquote><p>&#x2F;&#x2F;安装dhcp服务 </p></blockquote><p>service dhcpd start</p><blockquote><p>&#x2F;&#x2F;开启dhcp服务</p></blockquote><p>service dhcp restart</p><blockquote><p>&#x2F;&#x2F;重启dhcp服务 </p></blockquote><h2 id="注意"><a href="#注意" class="headerlink" title="注意:"></a><font color=“#FF00000”>注意:</font></h2><blockquote><p>在虚拟机上的编辑菜单中的虚拟网络编辑器中取消dhcp服务,由于取消了虚拟机网卡的dhcp服务，我们要给网卡手动配置一个ip，linux上的dhcp服务分配的ip必须和你网卡的ip一样。 </p></blockquote><p>vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</p><blockquote><p>&#x2F;&#x2F;进入网卡的配置文件(ens33不是固定的) </p></blockquote><h2 id="更改网卡配置文件"><a href="#更改网卡配置文件" class="headerlink" title="更改网卡配置文件:"></a>更改网卡配置文件:</h2><p>bootproto&#x3D;static</p><blockquote><p>&#x2F;&#x2F;变成静态  </p></blockquote><p>ONBOOT&#x3D;yes<br>IPADDR&#x3D;</p><blockquote><p>&#x2F;&#x2F;ip地址  </p></blockquote><p>NETMASK&#x3D;</p><blockquote><p>&#x2F;&#x2F;子网掩码</p></blockquote><p>GATEWAY&#x3D;</p><blockquote><p>&#x2F;&#x2F;网关 ,网络上默认网关:8.8.8.8  </p></blockquote><p>DNS1&#x3D;</p><blockquote><p>&#x2F;&#x2F;DNS服务  </p></blockquote><h2 id="配置完要重启网络服务"><a href="#配置完要重启网络服务" class="headerlink" title="配置完要重启网络服务"></a>配置完要重启网络服务</h2><p>service network restart</p><blockquote><p>&#x2F;&#x2F;重启网卡 </p></blockquote><h2 id="配置dhcp的配置文件"><a href="#配置dhcp的配置文件" class="headerlink" title="配置dhcp的配置文件:"></a>配置dhcp的配置文件:</h2><p>vi &#x2F;etc&#x2F;dhcp&#x2F;dhcpd.conf</p><blockquote><p>&#x2F;&#x2F;dhcp的配置文件</p></blockquote><p>subnet 192.168.100.0 netmask 255.255.255.0{</p><blockquote><p>&#x2F;&#x2F;定义网络地址和子网掩码</p></blockquote><p>range 192.168.100.200 192.168.100.251;</p><blockquote><p>&#x2F;&#x2F;分配ip地址的范围(写完加分号) </p></blockquote><p>option routers 192.168.100.2;</p><blockquote><p>&#x2F;&#x2F;配置网关  </p></blockquote><p>option domain-name-servers 8.8.8.8;</p><blockquote><p>&#x2F;&#x2F;配置DNS  </p></blockquote><p>default-lease-time 600;</p><blockquote><p>&#x2F;&#x2F;配置租约时间(默认,单位为秒)  </p></blockquote><p>max-lease-time 7200;</p><blockquote><p>&#x2F;&#x2F;配置租约时间(最大,单位为秒)  </p></blockquote><p>host xxx{ </p><blockquote><p>&#x2F;&#x2F;指定机器使用ip(xxx代表主机机器名，自行取名，选配)  </p></blockquote><p>hardware ethernet xx:xx:xx:xx:xx:xx:; </p><blockquote><p>&#x2F;&#x2F;指定机器的物理地址(xxx代表指定机器的物理地址)  </p></blockquote><p>fixed-address xxxxxx;</p><blockquote><p>&#x2F;&#x2F;指定机器的ip地址(xxx代表你要给的ip地址)  </p></blockquote><p>}<br>}<br>service dhcp restar</p><blockquote><p>&#x2F;&#x2F;重启dhcp服务  </p></blockquote><h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意:"></a><font color=“#FF00000”>注意:</font></h2><blockquote><p>1.在dhcp配置文件中，记得要在第一段和最后一段后添加大括号，在大括号里面的每一条语句都要添加分号。<br>2.在文中的给指定PC设置ip可以不选择，看要求.</p></blockquote><h2 id="测试"><a href="#测试" class="headerlink" title="测试:"></a>测试:</h2><p>设置客户端网卡为自动获取，如果不能获取，Linux进行安全设置<br>service  firewalld  stop<br>setenforce  0</p>]]></content>
     
     
     <categories>
@@ -504,36 +504,11 @@
   
   
   <entry>
-    <title>DHCP服务</title>
-    <link href="/2020/07/19/Linux/DHCP/"/>
-    <url>/2020/07/19/Linux/DHCP/</url>
+    <title>dns服务</title>
+    <link href="/2020/07/19/Linux/DNS/"/>
+    <url>/2020/07/19/Linux/DNS/</url>
     
-    <content type="html"><![CDATA[<h1 id="Linux的网络服务之一"><a href="#Linux的网络服务之一" class="headerlink" title="Linux的网络服务之一"></a>Linux的网络服务之一</h1><span id="more"></span><h2 id="dhcp服务"><a href="#dhcp服务" class="headerlink" title="dhcp服务"></a>dhcp服务</h2><p>rpm -q dhcp</p><blockquote><p>&#x2F;&#x2F;检查是否安装dhcp服务  </p></blockquote><p>yum install -y dhcp</p><blockquote><p>&#x2F;&#x2F;安装dhcp服务 </p></blockquote><p>service dhcpd start</p><blockquote><p>&#x2F;&#x2F;开启dhcp服务</p></blockquote><p>service dhcp restart</p><blockquote><p>&#x2F;&#x2F;重启dhcp服务 </p></blockquote><h2 id="注意"><a href="#注意" class="headerlink" title="注意:"></a><font color=“#FF00000”>注意:</font></h2><blockquote><p>在虚拟机上的编辑菜单中的虚拟网络编辑器中取消dhcp服务,由于取消了虚拟机网卡的dhcp服务，我们要给网卡手动配置一个ip，linux上的dhcp服务分配的ip必须和你网卡的ip一样。 </p></blockquote><p>vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</p><blockquote><p>&#x2F;&#x2F;进入网卡的配置文件(ens33不是固定的) </p></blockquote><h2 id="更改网卡配置文件"><a href="#更改网卡配置文件" class="headerlink" title="更改网卡配置文件:"></a>更改网卡配置文件:</h2><p>bootproto&#x3D;static</p><blockquote><p>&#x2F;&#x2F;变成静态  </p></blockquote><p>ONBOOT&#x3D;yes<br>IPADDR&#x3D;</p><blockquote><p>&#x2F;&#x2F;ip地址  </p></blockquote><p>NETMASK&#x3D;</p><blockquote><p>&#x2F;&#x2F;子网掩码</p></blockquote><p>GATEWAY&#x3D;</p><blockquote><p>&#x2F;&#x2F;网关 ,网络上默认网关:8.8.8.8  </p></blockquote><p>DNS1&#x3D;</p><blockquote><p>&#x2F;&#x2F;DNS服务  </p></blockquote><h2 id="配置完要重启网络服务"><a href="#配置完要重启网络服务" class="headerlink" title="配置完要重启网络服务"></a>配置完要重启网络服务</h2><p>service network restart</p><blockquote><p>&#x2F;&#x2F;重启网卡 </p></blockquote><h2 id="配置dhcp的配置文件"><a href="#配置dhcp的配置文件" class="headerlink" title="配置dhcp的配置文件:"></a>配置dhcp的配置文件:</h2><p>vi &#x2F;etc&#x2F;dhcp&#x2F;dhcpd.conf</p><blockquote><p>&#x2F;&#x2F;dhcp的配置文件</p></blockquote><p>subnet 192.168.100.0 netmask 255.255.255.0{</p><blockquote><p>&#x2F;&#x2F;定义网络地址和子网掩码</p></blockquote><p>range 192.168.100.200 192.168.100.251;</p><blockquote><p>&#x2F;&#x2F;分配ip地址的范围(写完加分号) </p></blockquote><p>option routers 192.168.100.2;</p><blockquote><p>&#x2F;&#x2F;配置网关  </p></blockquote><p>option domain-name-servers 8.8.8.8;</p><blockquote><p>&#x2F;&#x2F;配置DNS  </p></blockquote><p>default-lease-time 600;</p><blockquote><p>&#x2F;&#x2F;配置租约时间(默认,单位为秒)  </p></blockquote><p>max-lease-time 7200;</p><blockquote><p>&#x2F;&#x2F;配置租约时间(最大,单位为秒)  </p></blockquote><p>host xxx{ </p><blockquote><p>&#x2F;&#x2F;指定机器使用ip(xxx代表主机机器名，自行取名，选配)  </p></blockquote><p>hardware ethernet xx:xx:xx:xx:xx:xx:; </p><blockquote><p>&#x2F;&#x2F;指定机器的物理地址(xxx代表指定机器的物理地址)  </p></blockquote><p>fixed-address xxxxxx;</p><blockquote><p>&#x2F;&#x2F;指定机器的ip地址(xxx代表你要给的ip地址)  </p></blockquote><p>}<br>}<br>service dhcp restar</p><blockquote><p>&#x2F;&#x2F;重启dhcp服务  </p></blockquote><h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意:"></a><font color=“#FF00000”>注意:</font></h2><blockquote><p>1.在dhcp配置文件中，记得要在第一段和最后一段后添加大括号，在大括号里面的每一条语句都要添加分号。<br>2.在文中的给指定PC设置ip可以不选择，看要求.</p></blockquote><h2 id="测试"><a href="#测试" class="headerlink" title="测试:"></a>测试:</h2><p>设置客户端网卡为自动获取，如果不能获取，Linux进行安全设置<br>service  firewalld  stop<br>setenforce  0</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>cd</title>
-    <link href="/2020/07/19/Linux/cd/"/>
-    <url>/2020/07/19/Linux/cd/</url>
-    
-    <content type="html"><![CDATA[<h1 id="cd的应用"><a href="#cd的应用" class="headerlink" title="cd的应用"></a>cd的应用</h1><span id="more"></span><h2 id="cd-（目录路径）"><a href="#cd-（目录路径）" class="headerlink" title="cd （目录路径）"></a>cd （目录路径）</h2><blockquote><p>&#x2F;&#x2F;实现切换目录  </p></blockquote><h2 id="x2F"><a href="#x2F" class="headerlink" title="&#x2F;"></a>&#x2F;</h2><blockquote><p>&#x2F;&#x2F;根目录  </p></blockquote><h2 id="home"><a href="#home" class="headerlink" title="home"></a>home</h2><blockquote><p>&#x2F;&#x2F;家目录  </p></blockquote><h2 id=""><a href="#" class="headerlink" title="~"></a>~</h2><blockquote><p>&#x2F;&#x2F;主目录  </p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="Linux的网络服务之一"><a href="#Linux的网络服务之一" class="headerlink" title="Linux的网络服务之一"></a>Linux的网络服务之一</h1><h2 id="DNS服务器"><a href="#DNS服务器" class="headerlink" title="DNS服务器"></a>DNS服务器</h2><span id="more"></span><p>rpm -q bind</p><blockquote><p>&#x2F;&#x2F;检查DNS是否安装  </p></blockquote><p>yum install -y bind</p><blockquote><p>&#x2F;&#x2F;安装DNS服务</p></blockquote><p>service  firewalld  stop</p><blockquote><p>&#x2F;&#x2F;关闭防火墙</p></blockquote><p>setenforce  0</p><blockquote><p>&#x2F;&#x2F;关闭安全策略</p></blockquote><p>vi &#x2F;etc&#x2F;named.conf</p><blockquote><p>&#x2F;&#x2F;配置文件位置</p></blockquote><h2 id="配置文件更多信息"><a href="#配置文件更多信息" class="headerlink" title="配置文件更多信息"></a>配置文件更多信息</h2><p>DNS的配置文件分为:主配置文件，全局配置文件,区域配置文件,正向配置文件，反向配置文件.</p><h2 id="在主配置文件中"><a href="#在主配置文件中" class="headerlink" title="在主配置文件中"></a>在主配置文件中</h2><p>listen-on port 53 { 127.0.0.1; }; </p><blockquote><p>&#x2F;&#x2F;指定dns服务的端口和ip，dns默认监听端口为53，any代表主机的任何ip(ipv4)</p></blockquote><p>listen-on-v6 port 53 { ::1; };</p><blockquote><p>&#x2F;&#x2F;ipv6的配置</p></blockquote><p>directory       “&#x2F;var&#x2F;named”;</p><blockquote><p>&#x2F;&#x2F;程序的主目录</p></blockquote><p>allow-query     { localhost; };</p><blockquote><p>&#x2F;&#x2F;指定可以查询的客户端，any代表任意客户端,把127.0.0.1和localhost改成any即可。</p></blockquote><p>include “&#x2F;etc&#x2F;named.rfc1912.zones”;</p><blockquote><p>&#x2F;&#x2F;区域配置文件的位置</p></blockquote><p>vi &#x2F;etc&#x2F;named.rfc1912.zones</p><blockquote><p>&#x2F;&#x2F;进入解析配置文件</p></blockquote><h2 id="在解析配置文件中"><a href="#在解析配置文件中" class="headerlink" title="在解析配置文件中"></a>在解析配置文件中</h2><p>配置解析配置文件(正向)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Linux">zone &quot;myweb.com&quot; IN &#123;<br>        type master; <br>        file &quot;myweb.com.zheng&quot;;  <br>        allow-update &#123; none; &#125;; <br>&#125;;<br></code></pre></td></tr></table></figure><p>配置解析配置文件(反向)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Linux">zone &quot;159.168.192.in-addr.arpa&quot; IN &#123; <br>        type master;  <br>        file &quot;192.168.159.fan&quot;;  <br>        allow-update &#123; none; &#125;; <br>&#125;;  <br></code></pre></td></tr></table></figure><h2 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h2><ol><li>文中的myweb.com是你的域名地址</li><li>file “myweb.com.zheng”;是此域名的正向解析地址，其中引号里的语句可以自定义更改</li><li>文中的zone “159.168.192.in-addr.arpa” IN {是反向地址解析，语句159.168.192是你虚拟机或者服务器的ip地址的反向ip</li><li>file “192.168.159.fan”;是填写反向地址解析的配置文件，192.168.159.fan语句可以自定义</li></ol><h2 id="配置正向地址解析文件"><a href="#配置正向地址解析文件" class="headerlink" title="配置正向地址解析文件"></a>配置正向地址解析文件</h2><p>cp -a named.localhost myweb.com.zheng</p><blockquote><p>named.localhost为正向解析的模板，复制后的文件名字必须是你配置解析文件中file “myweb.com.zheng”;里的名字。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs Linux">$TTL 1D<br>@       IN SOA  abc.com. rname.invalid. (<br>                                        0       ; serial<br>                                        1D      ; refresh<br>                                        1H      ; retry<br>                                        1W      ; expire<br>                                        3H )    ; minimum<br>        NS      dns.abc.com.<br>        A       127.0.0.1<br>        AAAA    ::1<br>dns     A       192.168.100.128<br>www     A       192.168.100.129<br></code></pre></td></tr></table></figure><ol><li>abc.com.是你域名的地址</li><li>dns是主机名，192.168.100.128是对应的ip地址</li><li>www是主机名，192.168.100.129是对应的ip地址</li></ol><p>cp -a named.loopback 192.168.159.fan</p><blockquote><p>#named.loopback为反向解析的模板</p></blockquote><h2 id="配置反向地址解析文件"><a href="#配置反向地址解析文件" class="headerlink" title="配置反向地址解析文件"></a>配置反向地址解析文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Linux">$TTL 1D<br>@       IN SOA  abc.com. rname.invalid. (<br>                                        0       ; serial<br>                                        1D      ; refresh<br>                                        1H      ; retry<br>                                        1W      ; expire<br>                                        3H )    ; minimum<br>        NS      dns.abc.com.<br>        A       127.0.0.1<br>        AAAA    ::1<br>        PTR     localhost.<br>128     PTR     dns.abc.com<br>129     PTR     www.abc.com<br></code></pre></td></tr></table></figure><ol><li>abc.com.是你域名的地址</li><li>128是dns.abc.com的映射</li><li>129是<a href="http://www.abc.com的映射/">www.abc.com的映射</a></li><li>dns.abc.com的正&#x2F;反解析ip必须是网卡的dns</li><li>使用nslookup 命令，就可以查看解析</li></ol>]]></content>
     
     
     <categories>
@@ -559,56 +534,6 @@
     <url>/2020/07/19/Linux/cat/</url>
     
     <content type="html"><![CDATA[<h1 id="cat的应用"><a href="#cat的应用" class="headerlink" title="cat的应用"></a>cat的应用</h1><span id="more"></span><h2 id="cat-文件路径"><a href="#cat-文件路径" class="headerlink" title="cat (文件路径)"></a>cat (文件路径)</h2><blockquote><p>&#x2F;&#x2F;直接打开一个文件和vim不同不需要输入冒号和q</p></blockquote><h2 id="cat-（待合并的文件路径1）-（待合并和文件路径2）-gt-（合并之后的文件路径）"><a href="#cat-（待合并的文件路径1）-（待合并和文件路径2）-gt-（合并之后的文件路径）" class="headerlink" title="cat （待合并的文件路径1） （待合并和文件路径2） &gt;（合并之后的文件路径）"></a>cat （待合并的文件路径1） （待合并和文件路径2） &gt;（合并之后的文件路径）</h2><blockquote><p>&#x2F;&#x2F;实现文件的合并</p></blockquote><h2 id="cat-b-文件名"><a href="#cat-b-文件名" class="headerlink" title="cat -b (文件名)"></a>cat -b (文件名)</h2><blockquote><p>&#x2F;&#x2F;列出行号（忽略空白行）</p></blockquote><h2 id="cat-n-文件名"><a href="#cat-n-文件名" class="headerlink" title="cat -n (文件名)"></a>cat -n (文件名)</h2><blockquote><p>&#x2F;&#x2F;列出行号（不忽略空白）</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>fdisk</title>
-    <link href="/2020/07/19/Linux/fdisk/"/>
-    <url>/2020/07/19/Linux/fdisk/</url>
-    
-    <content type="html"><![CDATA[<h1 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h1><h2 id="fdisk磁盘分区操作"><a href="#fdisk磁盘分区操作" class="headerlink" title="fdisk磁盘分区操作"></a>fdisk磁盘分区操作</h2><span id="more"></span> <blockquote><p>接口：SCSI和IDE和SATA<br>主分区（最多1-4个）、扩展分区（最多0-1个）、逻辑分区（无数个）<br>磁盘编号：由三位字母与一位数字组成<br>主分区：&#x2F;dev&#x2F;sdb1、&#x2F;dev&#x2F;sdb2<br>扩展分区：&#x2F;dev&#x2F;sdb3<br>逻辑分区：&#x2F;dev&#x2F;sdb5、&#x2F;dev&#x2F;sdb6……（以此类推）</p></blockquote><p>fdisk -l</p><blockquote><p>查看分区情况</p></blockquote><p>fdisk &#x2F;dev&#x2F;sdb</p><blockquote><p>进入磁盘编辑模式</p></blockquote><h3 id="子命令"><a href="#子命令" class="headerlink" title="子命令"></a>子命令</h3><ul><li>n <blockquote><p>&#x2F;&#x2F;新建一个分区  </p></blockquote></li><li>p    <blockquote><p>&#x2F;&#x2F;列出分区表  </p></blockquote></li><li>l    <blockquote><p>&#x2F;&#x2F;显示分区文件类型列表  </p></blockquote></li><li>t    <blockquote><p>&#x2F;&#x2F;改变分区文件类型  </p></blockquote></li><li>m<blockquote><p>&#x2F;&#x2F;列出帮助信息  </p></blockquote></li><li>d   <blockquote><p>&#x2F;&#x2F;删除分区  </p></blockquote></li><li>w     <blockquote><p>&#x2F;&#x2F;保存分区  </p></blockquote></li><li>q    <blockquote><p>&#x2F;&#x2F;不保存退出分区  </p></blockquote><h2 id="磁盘的格式化操作"><a href="#磁盘的格式化操作" class="headerlink" title="磁盘的格式化操作"></a>磁盘的格式化操作</h2><p>mkfs（格式化的文件系统类型）（分区名称</p><h1 id="文件的挂载与卸载"><a href="#文件的挂载与卸载" class="headerlink" title="文件的挂载与卸载"></a>文件的挂载与卸载</h1><p>mount (选项(可有可无))（分区）（挂载点<br>例如：  </p><blockquote><p>mount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;m1</p></blockquote></li></ul><p>卸载命令格式：<br>umount (分区)(挂载点)<br>例如：  </p><blockquote><p>umount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;m1</p></blockquote><h2 id="自动挂载："><a href="#自动挂载：" class="headerlink" title="自动挂载："></a>自动挂载：</h2><p>1.设置开机自动挂载<br>2.增加自动挂载磁盘信息， 修改（vim &#x2F;etc&#x2F;fstab）配置文件：  </p><blockquote><p>vi&#x2F;etc&#x2F;fstab</p></blockquote><p>3.添加以下信息  </p><h2 id="gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）"><a href="#gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）" class="headerlink" title="gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）"></a>gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）</h2><p>gdisk （要分区的磁盘）</p><blockquote><p>&#x2F;&#x2F;进入分区，开始划分,里面和fdisk一样，保存后要格式化才能使用</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>find</title>
-    <link href="/2020/07/19/Linux/find/"/>
-    <url>/2020/07/19/Linux/find/</url>
-    
-    <content type="html"><![CDATA[<h1 id="find的应用"><a href="#find的应用" class="headerlink" title="find的应用"></a>find的应用</h1><span id="more"></span> <p>find (要查询的文件)  </p><blockquote><p>&#x2F;&#x2F;查找某一文件</p></blockquote><p>find（文件路径）（-name） （查找的文件名</p><blockquote><p>&#x2F;&#x2F;按名字查找  </p></blockquote>]]></content>
     
     
     <categories>
@@ -679,6 +604,56 @@
   
   
   <entry>
+    <title>fdisk</title>
+    <link href="/2020/07/19/Linux/fdisk/"/>
+    <url>/2020/07/19/Linux/fdisk/</url>
+    
+    <content type="html"><![CDATA[<h1 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h1><h2 id="fdisk磁盘分区操作"><a href="#fdisk磁盘分区操作" class="headerlink" title="fdisk磁盘分区操作"></a>fdisk磁盘分区操作</h2><span id="more"></span> <blockquote><p>接口：SCSI和IDE和SATA<br>主分区（最多1-4个）、扩展分区（最多0-1个）、逻辑分区（无数个）<br>磁盘编号：由三位字母与一位数字组成<br>主分区：&#x2F;dev&#x2F;sdb1、&#x2F;dev&#x2F;sdb2<br>扩展分区：&#x2F;dev&#x2F;sdb3<br>逻辑分区：&#x2F;dev&#x2F;sdb5、&#x2F;dev&#x2F;sdb6……（以此类推）</p></blockquote><p>fdisk -l</p><blockquote><p>查看分区情况</p></blockquote><p>fdisk &#x2F;dev&#x2F;sdb</p><blockquote><p>进入磁盘编辑模式</p></blockquote><h3 id="子命令"><a href="#子命令" class="headerlink" title="子命令"></a>子命令</h3><ul><li>n <blockquote><p>&#x2F;&#x2F;新建一个分区  </p></blockquote></li><li>p    <blockquote><p>&#x2F;&#x2F;列出分区表  </p></blockquote></li><li>l    <blockquote><p>&#x2F;&#x2F;显示分区文件类型列表  </p></blockquote></li><li>t    <blockquote><p>&#x2F;&#x2F;改变分区文件类型  </p></blockquote></li><li>m<blockquote><p>&#x2F;&#x2F;列出帮助信息  </p></blockquote></li><li>d   <blockquote><p>&#x2F;&#x2F;删除分区  </p></blockquote></li><li>w     <blockquote><p>&#x2F;&#x2F;保存分区  </p></blockquote></li><li>q    <blockquote><p>&#x2F;&#x2F;不保存退出分区  </p></blockquote><h2 id="磁盘的格式化操作"><a href="#磁盘的格式化操作" class="headerlink" title="磁盘的格式化操作"></a>磁盘的格式化操作</h2><p>mkfs（格式化的文件系统类型）（分区名称</p><h1 id="文件的挂载与卸载"><a href="#文件的挂载与卸载" class="headerlink" title="文件的挂载与卸载"></a>文件的挂载与卸载</h1><p>mount (选项(可有可无))（分区）（挂载点<br>例如：  </p><blockquote><p>mount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;m1</p></blockquote></li></ul><p>卸载命令格式：<br>umount (分区)(挂载点)<br>例如：  </p><blockquote><p>umount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;m1</p></blockquote><h2 id="自动挂载："><a href="#自动挂载：" class="headerlink" title="自动挂载："></a>自动挂载：</h2><p>1.设置开机自动挂载<br>2.增加自动挂载磁盘信息， 修改（vim &#x2F;etc&#x2F;fstab）配置文件：  </p><blockquote><p>vi&#x2F;etc&#x2F;fstab</p></blockquote><p>3.添加以下信息  </p><h2 id="gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）"><a href="#gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）" class="headerlink" title="gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）"></a>gdisk分区格式：（gpt格式，没有主分区和扩展分区的概念了）</h2><p>gdisk （要分区的磁盘）</p><blockquote><p>&#x2F;&#x2F;进入分区，开始划分,里面和fdisk一样，保存后要格式化才能使用</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>find</title>
+    <link href="/2020/07/19/Linux/find/"/>
+    <url>/2020/07/19/Linux/find/</url>
+    
+    <content type="html"><![CDATA[<h1 id="find的应用"><a href="#find的应用" class="headerlink" title="find的应用"></a>find的应用</h1><span id="more"></span> <p>find (要查询的文件)  </p><blockquote><p>&#x2F;&#x2F;查找某一文件</p></blockquote><p>find（文件路径）（-name） （查找的文件名</p><blockquote><p>&#x2F;&#x2F;按名字查找  </p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>free</title>
     <link href="/2020/07/19/Linux/free/"/>
     <url>/2020/07/19/Linux/free/</url>
@@ -729,6 +704,31 @@
   
   
   <entry>
+    <title>is</title>
+    <link href="/2020/07/19/Linux/ls/"/>
+    <url>/2020/07/19/Linux/ls/</url>
+    
+    <content type="html"><![CDATA[<h1 id="ls的应用"><a href="#ls的应用" class="headerlink" title="ls的应用"></a>ls的应用</h1><span id="more"></span> <p>ls （文档路径</p><blockquote><p>&#x2F;&#x2F;查看此目录的文件信息 </p></blockquote><p>ls -l 缩写：ll  </p><blockquote><p>&#x2F;&#x2F;查看更详细的文件信息</p></blockquote><p>ls -a</p><blockquote><p>&#x2F;&#x2F;显示所有文件及目录包括隐藏文件 </p></blockquote><p>ls -lh </p><blockquote><p>&#x2F;&#x2F;查看可读性更高的文档 （显示文件大小） </p></blockquote><h2 id="文件类型："><a href="#文件类型：" class="headerlink" title="文件类型："></a>文件类型：</h2><p>默认色代表普通文件。<br>红色代表tar包文件。<br>蓝色代表目录文件。<br>水红代表图象文件。<br>青色代表链接文件。（此类文件相当于快捷方式）<br>黄色代表设备文件。   </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>grep</title>
     <link href="/2020/07/19/Linux/grep/"/>
     <url>/2020/07/19/Linux/grep/</url>
@@ -754,61 +754,11 @@
   
   
   <entry>
-    <title>mkdir</title>
-    <link href="/2020/07/19/Linux/mkdir/"/>
-    <url>/2020/07/19/Linux/mkdir/</url>
+    <title>cd</title>
+    <link href="/2020/07/19/Linux/cd/"/>
+    <url>/2020/07/19/Linux/cd/</url>
     
-    <content type="html"><![CDATA[<h1 id="mkdir的应用"><a href="#mkdir的应用" class="headerlink" title="mkdir的应用"></a>mkdir的应用</h1><span id="more"></span> <p>mkdir（路径）</p><blockquote><p>&#x2F;&#x2F;创建目录</p></blockquote><p>mkdir -p （路径）</p><blockquote><p>&#x2F;&#x2F;可以连续创建多层不存在的目录    </p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>man</title>
-    <link href="/2020/07/19/Linux/man/"/>
-    <url>/2020/07/19/Linux/man/</url>
-    
-    <content type="html"><![CDATA[<h1 id="关于linux命令帮助"><a href="#关于linux命令帮助" class="headerlink" title="关于linux命令帮助"></a>关于linux命令帮助</h1><span id="more"></span><p>man</p><blockquote><p>作用:manual，手册（包含了linux中全部命令的手册）<br>退出按q键  </p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>is</title>
-    <link href="/2020/07/19/Linux/ls/"/>
-    <url>/2020/07/19/Linux/ls/</url>
-    
-    <content type="html"><![CDATA[<h1 id="ls的应用"><a href="#ls的应用" class="headerlink" title="ls的应用"></a>ls的应用</h1><span id="more"></span> <p>ls （文档路径</p><blockquote><p>&#x2F;&#x2F;查看此目录的文件信息 </p></blockquote><p>ls -l 缩写：ll  </p><blockquote><p>&#x2F;&#x2F;查看更详细的文件信息</p></blockquote><p>ls -a</p><blockquote><p>&#x2F;&#x2F;显示所有文件及目录包括隐藏文件 </p></blockquote><p>ls -lh </p><blockquote><p>&#x2F;&#x2F;查看可读性更高的文档 （显示文件大小） </p></blockquote><h2 id="文件类型："><a href="#文件类型：" class="headerlink" title="文件类型："></a>文件类型：</h2><p>默认色代表普通文件。<br>红色代表tar包文件。<br>蓝色代表目录文件。<br>水红代表图象文件。<br>青色代表链接文件。（此类文件相当于快捷方式）<br>黄色代表设备文件。   </p>]]></content>
+    <content type="html"><![CDATA[<h1 id="cd的应用"><a href="#cd的应用" class="headerlink" title="cd的应用"></a>cd的应用</h1><span id="more"></span><h2 id="cd-（目录路径）"><a href="#cd-（目录路径）" class="headerlink" title="cd （目录路径）"></a>cd （目录路径）</h2><blockquote><p>&#x2F;&#x2F;实现切换目录  </p></blockquote><h2 id="x2F"><a href="#x2F" class="headerlink" title="&#x2F;"></a>&#x2F;</h2><blockquote><p>&#x2F;&#x2F;根目录  </p></blockquote><h2 id="home"><a href="#home" class="headerlink" title="home"></a>home</h2><blockquote><p>&#x2F;&#x2F;家目录  </p></blockquote><h2 id=""><a href="#" class="headerlink" title="~"></a>~</h2><blockquote><p>&#x2F;&#x2F;主目录  </p></blockquote>]]></content>
     
     
     <categories>
@@ -854,6 +804,31 @@
   
   
   <entry>
+    <title>man</title>
+    <link href="/2020/07/19/Linux/man/"/>
+    <url>/2020/07/19/Linux/man/</url>
+    
+    <content type="html"><![CDATA[<h1 id="关于linux命令帮助"><a href="#关于linux命令帮助" class="headerlink" title="关于linux命令帮助"></a>关于linux命令帮助</h1><span id="more"></span><p>man</p><blockquote><p>作用:manual，手册（包含了linux中全部命令的手册）<br>退出按q键  </p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>rm</title>
     <link href="/2020/07/19/Linux/rm/"/>
     <url>/2020/07/19/Linux/rm/</url>
@@ -879,61 +854,11 @@
   
   
   <entry>
-    <title>Touch</title>
-    <link href="/2020/07/19/Linux/touch/"/>
-    <url>/2020/07/19/Linux/touch/</url>
+    <title>mkdir</title>
+    <link href="/2020/07/19/Linux/mkdir/"/>
+    <url>/2020/07/19/Linux/mkdir/</url>
     
-    <content type="html"><![CDATA[<h1 id="touch的应用"><a href="#touch的应用" class="headerlink" title="touch的应用"></a>touch的应用</h1> <span id="more"></span><p> touch (文件路径)</p><blockquote><p>&#x2F;&#x2F;创建文件</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>shutdown</title>
-    <link href="/2020/07/19/Linux/shutdown/"/>
-    <url>/2020/07/19/Linux/shutdown/</url>
-    
-    <content type="html"><![CDATA[<h1 id="关于linux关机的知识"><a href="#关于linux关机的知识" class="headerlink" title="关于linux关机的知识"></a>关于linux关机的知识</h1><span id="more"></span><p>shutdown<br>作用:关机<br>服务器慎用<br>shutdown -h now</p><blockquote><p>&#x2F;&#x2F;立即关机</p></blockquote><p>shutdown -h （时间）</p><blockquote><p>&#x2F;&#x2F;定时关机</p></blockquote><blockquote><p>&#x2F;&#x2F;按ctrl+c退出关机计划<br>如果在centos7.x之前的版本：按ctrl+c退出关机计划<br>如果在centos7.x之后的版本：shutdown -c    </p></blockquote><h2 id="其他关机命令"><a href="#其他关机命令" class="headerlink" title="其他关机命令:"></a>其他关机命令:</h2><p>init 0<br>halt<br>poweroff<br>uptime<br>&#x2F;&#x2F;作用:输出计算机的持续在线时间（从计算机开机以来到现在运行的时间）  </p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Tail</title>
-    <link href="/2020/07/19/Linux/tail%20head/"/>
-    <url>/2020/07/19/Linux/tail%20head/</url>
-    
-    <content type="html"><![CDATA[<h1 id="hand的应用"><a href="#hand的应用" class="headerlink" title="hand的应用"></a>hand的应用</h1> <span id="more"></span> <p>head (文件路径)</p><blockquote><p>&#x2F;&#x2F;(查看一个文件的前N行，如果不指定，默认10行)</p></blockquote><p>head -n</p><blockquote><p>&#x2F;&#x2F;n＝你要看的行数+文件路径  </p></blockquote><h1 id="tail的应用"><a href="#tail的应用" class="headerlink" title="tail的应用"></a>tail的应用</h1><p>tail (文件路径)</p><blockquote><p>&#x2F;&#x2F;（查看一个文件的末n行，如果不指定，默认10行）</p></blockquote><p>tail -n</p><blockquote><p>&#x2F;&#x2F; n＝你要看的行数 +文件路径</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="mkdir的应用"><a href="#mkdir的应用" class="headerlink" title="mkdir的应用"></a>mkdir的应用</h1><span id="more"></span> <p>mkdir（路径）</p><blockquote><p>&#x2F;&#x2F;创建目录</p></blockquote><p>mkdir -p （路径）</p><blockquote><p>&#x2F;&#x2F;可以连续创建多层不存在的目录    </p></blockquote>]]></content>
     
     
     <categories>
@@ -979,6 +904,56 @@
   
   
   <entry>
+    <title>Tail</title>
+    <link href="/2020/07/19/Linux/tail%20head/"/>
+    <url>/2020/07/19/Linux/tail%20head/</url>
+    
+    <content type="html"><![CDATA[<h1 id="hand的应用"><a href="#hand的应用" class="headerlink" title="hand的应用"></a>hand的应用</h1> <span id="more"></span> <p>head (文件路径)</p><blockquote><p>&#x2F;&#x2F;(查看一个文件的前N行，如果不指定，默认10行)</p></blockquote><p>head -n</p><blockquote><p>&#x2F;&#x2F;n＝你要看的行数+文件路径  </p></blockquote><h1 id="tail的应用"><a href="#tail的应用" class="headerlink" title="tail的应用"></a>tail的应用</h1><p>tail (文件路径)</p><blockquote><p>&#x2F;&#x2F;（查看一个文件的末n行，如果不指定，默认10行）</p></blockquote><p>tail -n</p><blockquote><p>&#x2F;&#x2F; n＝你要看的行数 +文件路径</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>shutdown</title>
+    <link href="/2020/07/19/Linux/shutdown/"/>
+    <url>/2020/07/19/Linux/shutdown/</url>
+    
+    <content type="html"><![CDATA[<h1 id="关于linux关机的知识"><a href="#关于linux关机的知识" class="headerlink" title="关于linux关机的知识"></a>关于linux关机的知识</h1><span id="more"></span><p>shutdown<br>作用:关机<br>服务器慎用<br>shutdown -h now</p><blockquote><p>&#x2F;&#x2F;立即关机</p></blockquote><p>shutdown -h （时间）</p><blockquote><p>&#x2F;&#x2F;定时关机</p></blockquote><blockquote><p>&#x2F;&#x2F;按ctrl+c退出关机计划<br>如果在centos7.x之前的版本：按ctrl+c退出关机计划<br>如果在centos7.x之后的版本：shutdown -c    </p></blockquote><h2 id="其他关机命令"><a href="#其他关机命令" class="headerlink" title="其他关机命令:"></a>其他关机命令:</h2><p>init 0<br>halt<br>poweroff<br>uptime<br>&#x2F;&#x2F;作用:输出计算机的持续在线时间（从计算机开机以来到现在运行的时间）  </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>uname</title>
     <link href="/2020/07/19/Linux/uname/"/>
     <url>/2020/07/19/Linux/uname/</url>
@@ -1004,11 +979,11 @@
   
   
   <entry>
-    <title>Vim</title>
-    <link href="/2020/07/19/Linux/vim/"/>
-    <url>/2020/07/19/Linux/vim/</url>
+    <title>Touch</title>
+    <link href="/2020/07/19/Linux/touch/"/>
+    <url>/2020/07/19/Linux/touch/</url>
     
-    <content type="html"><![CDATA[<h1 id="vim编辑器的应用"><a href="#vim编辑器的应用" class="headerlink" title="vim编辑器的应用"></a>vim编辑器的应用</h1><span id="more"></span> <blockquote><p>vim （文本编辑器）</p></blockquote><p>vim(文件路径，文件可有可无)</p><p>编辑文档的时候:<br>shift+:然后输入q 回车</p><blockquote><p>&#x2F;&#x2F;退出打开的文件</p></blockquote><details><summary>更多信息</summary><blockquote><p>i<br>编辑文档，在状态行显示–INSERT<br>w<br>保存已编辑完成的文档<br>q<br>关闭文档并退出<br>q！<br>强制关闭文档并退出<br>&#x2F;(字符串)<br>在文档中查找指定的字符串,使用n查找下一个字符<br>set number<br>文档中显示行号<br>set nonumber<br>文档中不显示行号<br>d<br>删除当前行<br>nd<br>删除第n行<br>n1,n2d<br>删除从n1行到n2行<br>.,$<br>d删除当前行到结尾的所有内容<br>s&#x2F;字符串1 &#x2F;字符串2&#x2F;g<br>将当前行文档中字符串1用字符串2替换<br>%s&#x2F;字符串1 &#x2F;字符串2&#x2F;g<br>将文档中所有字符串1用字符串2替换<br>ESC键<br>退出文档编辑状态，进入非编辑状态<br>Shift+:键<br>在非编辑状态，用来在文档左下角输入子命令的一个提示符<br>u<br>在非编辑状态，撤销上次操作</p></blockquote></details>    ]]></content>
+    <content type="html"><![CDATA[<h1 id="touch的应用"><a href="#touch的应用" class="headerlink" title="touch的应用"></a>touch的应用</h1> <span id="more"></span><p> touch (文件路径)</p><blockquote><p>&#x2F;&#x2F;创建文件</p></blockquote>]]></content>
     
     
     <categories>
@@ -1034,6 +1009,31 @@
     <url>/2020/07/19/Linux/useradd/</url>
     
     <content type="html"><![CDATA[<h1 id="组和用户的详细信息与操作-（重点）"><a href="#组和用户的详细信息与操作-（重点）" class="headerlink" title="组和用户的详细信息与操作  （重点）"></a>组和用户的详细信息与操作  （重点）</h1><span id="more"></span>  <h2 id="用户的配置和修改"><a href="#用户的配置和修改" class="headerlink" title="用户的配置和修改"></a>用户的配置和修改</h2><p>useradd （用户名</p><blockquote><p>&#x2F;&#x2F; 创建一个用户</p></blockquote><p>tail &#x2F;etc&#x2F;passwd</p><blockquote><p>&#x2F;&#x2F; 可以查看用户 </p></blockquote><blockquote><p>例如:gopher:X:13:30:gopher:&#x2F;var&#x2F;gopher&#x2F;:&#x2F;sbin&#x2F;nologin<br>解释:用户名:密码:用户id:用户所在组id:备注:用户家目录:shell命令所在目录。</p></blockquote><blockquote><p>如果想改变uid号和组id号则：<br>usermod -u （新id号） -g （对应组的id号） -c （注释信息） -d （后面加目录） -s（修改的用户的shell） （用户名称  ）</p></blockquote><p>usermod(参数)</p><h3 id="参数"><a href="#参数" class="headerlink" title="参数:"></a>参数:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs Linux">-u <br>//设置用户ID（UID），用户ID和账号一样必须是唯一的。<br>-g         <br>//指定用户所属的主（私有）组（组必须存在），参数可以是组名称或组ID(GID)。<br>-d        <br>//建立用户目录，参数即所建的用户目录（通常与用户账号相同）。<br>-s       <br>//设置用户环境，即设置用户的shell环境。<br>-e      <br>//设置用户账号的使用期限。<br>-G     <br>//用户组，指定用户所属的附加组。 <br>-c  <br>//修改注释信息 <br></code></pre></td></tr></table></figure><p>usermod -l （你要改的用户名） （原来的用户名）</p><blockquote><p>&#x2F;&#x2F;修改用户名</p></blockquote><p>usermod (要删除的用户名)</p><blockquote><p>&#x2F;&#x2F;删除用户名      </p></blockquote><h3 id="密码文件"><a href="#密码文件" class="headerlink" title="密码文件"></a>密码文件</h3><p>tail &#x2F;etc&#x2F;shadow</p><blockquote><p>&#x2F;&#x2F;查看密码文件。</p></blockquote><p>passwd (用户名)</p><blockquote><p>&#x2F;&#x2F;设置密码。</p></blockquote><p>tail &#x2F;etc&#x2F;shadow</p><blockquote><p>&#x2F;查看组密码信息</p></blockquote><blockquote><p>例如:user1:!!:17464:0:99999:7:::  </p><blockquote><p>含义:用户名：密码（无法破解）：最后一次修改时间：密码还有多少天不能更改：密码到期时间：密码到期前的期限：密码失效期限：账号生命周期：保留字&#x2F;etc&#x2F;passwd（用户信息）</p></blockquote></blockquote><h3 id="组的应用和修改"><a href="#组的应用和修改" class="headerlink" title="组的应用和修改"></a>组的应用和修改</h3><p>userdel -r (用户名）</p><blockquote><p>&#x2F;&#x2F;删除用户和目录。</p></blockquote><p>groupadd （组名称）</p><blockquote><p>&#x2F;&#x2F;创建一个用户组 </p></blockquote><p>tail &#x2F;etc&#x2F;group</p><blockquote><p>&#x2F;&#x2F;查看用户组文件</p></blockquote><blockquote><p>例如:ip:X:7:deamon:ip<br>解释:用户组:用户组口令:UID和该用户组包含的用户  </p></blockquote><p>usermod -g （要修改的组）（用户名称）</p><blockquote><p>&#x2F;&#x2F;修改用户的组 </p></blockquote><p>usermod -d  （主目录）（用户名）</p><blockquote><p>&#x2F;&#x2F;修改用户的主目录为…..</p></blockquote><p>passwd -l （用户名）</p><blockquote><p>&#x2F;&#x2F;锁定用户  </p></blockquote><p>passwd -u （用户名）</p><blockquote><p>&#x2F;&#x2F;解锁用户  </p></blockquote><p>gpasswd -d （用户名） （组名）</p><blockquote><p>&#x2F;&#x2F;从组中删除用户 </p></blockquote><p>groupdel （组名）</p><blockquote><p>&#x2F;&#x2F;删除组  </p></blockquote><p>gpasswd (组名称)</p><blockquote><p>&#x2F;&#x2F;给组设置密码  </p></blockquote><p>gpasswd -d （用户名） （组名）    </p><blockquote><p>&#x2F;&#x2F;从组中删除用户 </p></blockquote><p>gpasswd -a  （用户名）</p><blockquote><p>&#x2F;&#x2F;为组增加用户</p></blockquote><h3 id="id的应用"><a href="#id的应用" class="headerlink" title="id的应用"></a>id的应用</h3><p>id (用户名) </p><blockquote><p>&#x2F;&#x2F;查看用户id信息</p></blockquote><p>id-g （用户名）</p><blockquote><p>&#x2F;&#x2F;显示用户所属群组的ID </p></blockquote><p>id-G （用户名）</p><blockquote><p>&#x2F;&#x2F;显示用户所属附加群组的ID</p></blockquote><p>id-u （用户名）</p><blockquote><p>&#x2F;&#x2F;显示用户ID     </p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vim</title>
+    <link href="/2020/07/19/Linux/vim/"/>
+    <url>/2020/07/19/Linux/vim/</url>
+    
+    <content type="html"><![CDATA[<h1 id="vim编辑器的应用"><a href="#vim编辑器的应用" class="headerlink" title="vim编辑器的应用"></a>vim编辑器的应用</h1><span id="more"></span> <blockquote><p>vim （文本编辑器）</p></blockquote><p>vim(文件路径，文件可有可无)</p><p>编辑文档的时候:<br>shift+:然后输入q 回车</p><blockquote><p>&#x2F;&#x2F;退出打开的文件</p></blockquote><details><summary>更多信息</summary><blockquote><p>i<br>编辑文档，在状态行显示–INSERT<br>w<br>保存已编辑完成的文档<br>q<br>关闭文档并退出<br>q！<br>强制关闭文档并退出<br>&#x2F;(字符串)<br>在文档中查找指定的字符串,使用n查找下一个字符<br>set number<br>文档中显示行号<br>set nonumber<br>文档中不显示行号<br>d<br>删除当前行<br>nd<br>删除第n行<br>n1,n2d<br>删除从n1行到n2行<br>.,$<br>d删除当前行到结尾的所有内容<br>s&#x2F;字符串1 &#x2F;字符串2&#x2F;g<br>将当前行文档中字符串1用字符串2替换<br>%s&#x2F;字符串1 &#x2F;字符串2&#x2F;g<br>将文档中所有字符串1用字符串2替换<br>ESC键<br>退出文档编辑状态，进入非编辑状态<br>Shift+:键<br>在非编辑状态，用来在文档左下角输入子命令的一个提示符<br>u<br>在非编辑状态，撤销上次操作</p></blockquote></details>    ]]></content>
     
     
     <categories>
